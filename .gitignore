@@ -1,0 +1,34 @@
+
+!data/cache/.gitkeep
+*$py.class
+*.db
+*.egg-info/
+*.py[cod]
+*.sqlite
+.DS_Store
+.coverage
+.deploy-agent-seek-api-key
+.eggs/
+.env
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.venv/
+__pycache__/
+build/
+data/cache/*
+dist/
+htmlcov/
+node_modules/
+venv/
+
+# Local planning PRDs (not shipped; keep under docs/)
+/PRD.md
+/PRD_*.md
+docs/PRD.md
+docs/PRD_*.md
+
+# Live eval output (script recreates this directory)
+evals/reports/
+evals/public_v1/results/run_*/
+evals/public_v1/top3/results/run_*/

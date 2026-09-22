@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "public_v1 pairwise judge verdict",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "winner",
+    "confidence",
+    "rationale",
+    "a_first_relevant_rank",
+    "b_first_relevant_rank"
+  ],
+  "properties": {
+    "winner": {
+      "type": "string",
+      "enum": ["A", "B", "tie"],
+      "description": "Blind list label that should be preferred, or tie."
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Judge confidence in the winner field."
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 280,
+      "description": "At most ~40 words. Do not invent URLs."
+    },
+    "a_first_relevant_rank": {
+      "type": ["integer", "null"],
+      "minimum": 1,
+      "description": "1-based rank of the first on-point result in list A, or null."
+    },
+    "b_first_relevant_rank": {
+      "type": ["integer", "null"],
+      "minimum": 1,
+      "description": "1-based rank of the first on-point result in list B, or null."
+    }
+  }
+}

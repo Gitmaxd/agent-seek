@@ -1,0 +1,76 @@
+<h1>Agent Seek privacy</h1>
+    <p>
+      How the Agent Seek prototype handles information as of version 0.1.39. Operated by Git Maxd
+      (Queen Creek, Arizona). It is a search proxy with a ranking layer, not an advertising network
+      and not a consumer account product.
+    </p>
+    <h2>What we process</h2>
+    <p>
+      <strong>Search queries.</strong> When you submit a query on the website or
+      <code>POST /v1/search</code>, the text of <code>q</code> (and options such as
+      <code>k</code>, <code>max_candidates</code>, <code>mode</code>) is sent to this service so it
+      can discover and rank results. The same query is forwarded to <strong>You.com</strong>
+      (discover) and, when ranking is on, to <strong>TypeSafe</strong> (Jev / System One). We do not
+      append a user profile or advertising identifier. Do not put secrets, passwords, or personal
+      health data in <code>q</code>.
+    </p>
+    <p>
+      <strong>API keys.</strong> <code>AGENT_SEEK_API_KEY</code> authenticates agents. Send it only
+      in <code>Authorization</code> or <code>X-API-Key</code>. The server compares it to the
+      configured secret and does not write keys to application logs by design.
+      <code>/config.js</code> may inject a same-origin UI key for the demo page; that file is
+      disallowed in <code>robots.txt</code> and must not be treated as a public credential dump.
+      <code>robots.txt</code> also <code>Disallow: /v1/</code> for training crawlers, with an
+      explicit <code>Allow: /v1/sandbox</code> (and <code>/v1/sandbox/</code>) above that rule so
+      the zero-auth sandbox stays crawlable.
+      Upstream keys (<code>YDC_API_KEY</code>, <code>TYPESAFE_API_KEY</code>) never leave the server
+      and are never returned in API or HTML responses.
+    </p>
+    <p>
+      <strong>Results.</strong> Titles, URLs, and snippets come from You.com (and, in
+      <code>mode=deep</code>, from fetched page text). We cache discover payloads on the server
+      filesystem for a short TTL to control cost. Ranking is recomputed. You can force a discover
+      cache miss with <code>nocache=true</code>. Cache entries are query-derived, not a cross-user
+      identity graph.
+    </p>
+    <p>
+      <strong>Technical metadata.</strong> When <code>AGENT_SEEK_DEMO_MODE=enabled</code>
+      (code default <code>disabled</code>; the live host sets <code>enabled</code> at deploy), the live
+      host may see your IP address for a lifetime per-IP demo quota shared by REST
+      <code>/v1/search</code>, <code>/api/v1/search</code>, and MCP <code>search_web</code>
+      (default 5 searches, Upstash <code>INCR</code>, no TTL). Exhausted calls return
+      <code>429</code> <code>application/problem+json</code> with <code>code=DEMO_EXHAUSTED</code>
+      and no <code>Retry-After</code>. Unauthenticated MCP helper tools are not counted
+      against that quota.
+      There is also an optional Upstash burst limit (default 60 requests per minute per
+      client IP when Redis is configured); that <code>429</code> may include <code>Retry-After</code>.
+      Local/dev applies neither unless demo mode is enabled and the Upstash env vars are set.
+      We do not sell logs. There are no third-party marketing pixels on the search UI.
+    </p>
+    <h2>What we do not do</h2>
+    <ul>
+      <li>We do not create end-user accounts or store passwords.</li>
+      <li>We do not sell query streams or build advertising profiles.</li>
+      <li>We do not use search contents to train Agent Seek’s own ranking model (Jev is a third-party judge).</li>
+      <li>We do not claim that You.com or TypeSafe will delete your query on a custom schedule; their policies apply once the request leaves this host.</li>
+    </ul>
+    <h2>Upstream processors</h2>
+    <ul>
+      <li><a href="https://you.com/legal/privacy">You.com privacy</a>: web search / discover.</li>
+      <li>TypeSafe / Jev: ranking judgments on titles, URLs, snippets, and (deep mode) extracted page text.</li>
+    </ul>
+    <p>
+      If you need a query forgotten on this host, email
+      <a href="mailto:131803031+Gitmaxd@users.noreply.github.com">131803031+Gitmaxd@users.noreply.github.com</a>
+      with the approximate time and the query text. Local self-host operators control their own
+      cache directory and <code>.env</code>.
+    </p>
+    <h2>Cookies and tracking</h2>
+    <p>The search UI does not set an analytics cookie. It is a static page plus <code>POST /v1/search</code>.</p>
+    <h2>Children</h2>
+    <p>
+      Agent Seek is a developer / agent prototype, not directed at children under 13
+      (or under 16 where that is the digital-consent age).
+    </p>
+    <h2>Changes</h2>
+    <p>Material changes will be reflected on this page and in the changelog. Questions: <a href="/contact">/contact</a>.</p>

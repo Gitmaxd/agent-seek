@@ -1,0 +1,50 @@
+{"id": "p1-001", "tier": "L1", "intent": "official tutorial", "q": "FastAPI dependency injection tutorial", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-002", "tier": "L1", "intent": "official index docs", "q": "Postgres JSONB GIN index documentation", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-003", "tier": "L1", "intent": "canonical RFC", "q": "RFC 9110 HTTP semantics", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-004", "tier": "L1", "intent": "official React docs", "q": "React useEffect cleanup function", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-005", "tier": "L1", "intent": "official k8s docs", "q": "Kubernetes liveness vs readiness probe", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-006", "tier": "L1", "intent": "official SQLite docs", "q": "SQLite WAL mode concurrency", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-007", "tier": "L1", "intent": "official KV limits", "q": "Cloudflare Workers KV limits", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-008", "tier": "L1", "intent": "canonical spec", "q": "OpenAPI 3.1 specification", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-009", "tier": "L1", "intent": "official Python docs", "q": "Python asyncio TaskGroup", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-010", "tier": "L1", "intent": "official Redis docs", "q": "Redis Streams consumer groups", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-011", "tier": "L1", "intent": "official Actions docs", "q": "GitHub Actions cache key documentation", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-012", "tier": "L1", "intent": "MDN CSP docs", "q": "MDN Content-Security-Policy", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-013", "tier": "L1", "intent": "official Docker docs", "q": "Docker multi-stage build best practices", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-014", "tier": "L1", "intent": "official Prometheus docs", "q": "Prometheus histogram vs summary", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-015", "tier": "L1", "intent": "authoritative TLS overview", "q": "TLS 1.3 handshake overview", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-016", "tier": "L2", "intent": "product milestone date", "q": "When was Next.js App Router stable", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-017", "tier": "L2", "intent": "first-party launch post", "q": "LangChain Deep Agents release announcement", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-018", "tier": "L2", "intent": "official product docs", "q": "Factory.ai Droid skills documentation", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-019", "tier": "L2", "intent": "pricing and limits", "q": "Vercel Fluid compute pricing limits", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-020", "tier": "L2", "intent": "official rate limits", "q": "Upstash Redis REST rate limits", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-021", "tier": "L2", "intent": "official branching docs", "q": "Neon serverless Postgres branching docs", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-022", "tier": "L2", "intent": "official tool-use docs", "q": "Anthropic tool use JSON schema", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-023", "tier": "L2", "intent": "official structured-output docs", "q": "OpenAI structured outputs JSON schema", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-024", "tier": "L2", "intent": "official MCP spec", "q": "MCP streamable HTTP transport", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-025", "tier": "L2", "intent": "canonical OAuth spec", "q": "OAuth 2.1 authorization code PKCE", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-026", "tier": "L2", "intent": "official R2 pricing", "q": "Cloudflare R2 egress pricing", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-027", "tier": "L2", "intent": "official product docs", "q": "Exe.dev persistent Linux VMs", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-028", "tier": "L2", "intent": "official product docs", "q": "Cursor Background Agents documentation", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-029", "tier": "L2", "intent": "official Temporal docs", "q": "Temporal workflow vs activity", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-030", "tier": "L2", "intent": "official engine caveats", "q": "ClickHouse ReplacingMergeTree caveats", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-031", "tier": "L2", "intent": "official Pydantic v2 docs", "q": "Pydantic v2 model_validate vs parse_obj", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-032", "tier": "L2", "intent": "support vs spec", "q": "HTTP 103 Early Hints browser support", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-033", "tier": "L2", "intent": "spec or MDN", "q": "WebAuthn discoverable credentials passkeys", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-034", "tier": "L2", "intent": "official S3 docs", "q": "S3 conditional writes If-None-Match", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-035", "tier": "L2", "intent": "pooling caveats", "q": "Postgres LISTEN NOTIFY connection pooling pitfalls", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-036", "tier": "L3", "intent": "authoritative bio vs SEO", "q": "Who created Redis", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-037", "tier": "L3", "intent": "primary paper vs rewrite", "q": "Original paper introducing the Transformer attention architecture", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-038", "tier": "L3", "intent": "canonical host vs scrapers", "q": "Official X/Twitter profile for OpenAI", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-039", "tier": "L3", "intent": "canonical Instagram vs viewers", "q": "NASA Instagram on the official Instagram host", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-040", "tier": "L3", "intent": "canonical github.com profile", "q": "GitHub user torvalds", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-041", "tier": "L3", "intent": "encyclopedia vs SEO rewrite", "q": "Wikipedia English: Transformer (machine learning model) vs SEO blog summaries of Attention Is All You Need", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-042", "tier": "L3", "intent": "official date vs rumor", "q": "Apple Vision Pro US release date", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-043", "tier": "L3", "intent": "first-party distinction", "q": "Difference between LangGraph and LangChain agents", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-044", "tier": "L3", "intent": "official vs tutorial-farm", "q": "Official Solidity language documentation", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-045", "tier": "L3", "intent": "official product distinction", "q": "Cloudflare Workers vs Cloudflare Pages Functions", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-046", "tier": "L3", "intent": "educational defensive overview", "q": "What is prompt injection? defensive overview for LLM applications", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-047", "tier": "L3", "intent": "official release notes", "q": "PyTorch 2.0 release date", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-048", "tier": "L3", "intent": "canonical maintainer", "q": "Who maintains the ripgrep project", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-049", "tier": "L3", "intent": "official security channel", "q": "Official Kubernetes security announcements / CVE channel vs random aggregators", "gold_answer": "", "gold_notes": "", "locked": false}
+{"id": "p1-050", "tier": "L3", "intent": "official API distinction", "q": "Stripe Tax vs Stripe Tax Calculations API distinction", "gold_answer": "", "gold_notes": "", "locked": false}

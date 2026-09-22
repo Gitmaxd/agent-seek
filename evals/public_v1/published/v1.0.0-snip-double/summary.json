@@ -1,0 +1,26 @@
+{
+  "suite_id": "agent-seek-public-v1",
+  "kind": "double_judge",
+  "mode": "snip",
+  "n": 50,
+  "both_verdicts": 50,
+  "errors": 0,
+  "agreeing": 43,
+  "flips": 7,
+  "flip_rate": 0.14,
+  "agent_seek_wins": 30,
+  "baseline_wins": 13,
+  "ties": 0,
+  "judged": 43,
+  "definitions": {
+    "flip_rate": "flips / both_verdicts. A flip is a pair where both passes returned a verdict and the mapped arms differ, including a tie against a side. A raw A/B label change that maps to the same arm is not a flip.",
+    "agreeing_wtl": "agent_seek_wins, baseline_wins, and ties count only pairs whose two mapped arms are equal. Of-n preference is agent_seek_wins / agreeing, and agreeing ties count as non-wins. Excl.-ties uses agreeing - ties.",
+    "incomplete": "A pair with a missing or errored pass is neither an agree nor a flip. It is excluded from flip_rate and from the agreeing W/T/L.",
+    "blinding": "The judge and the human packet see list A and list B only. assignment maps those labels to baseline | agent_seek and is stored in run output, not sent to the judge.",
+    "tie_handling": "Both passes map to tie: agree, count as a tie. One pass maps to tie and the other to a side: flip, omit from agreeing W/T/L."
+  },
+  "source_published": "evals/public_v1/published/v1.0.0-snip",
+  "shortlist_text": "url_only",
+  "original_matches_published": 44,
+  "original_comparable": 50
+}

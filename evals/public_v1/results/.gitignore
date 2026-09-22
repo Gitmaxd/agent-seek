@@ -1,0 +1,2 @@
+# Raw run directories (URLs, A/B maps, model traces). Keep .gitkeep.
+run_*/

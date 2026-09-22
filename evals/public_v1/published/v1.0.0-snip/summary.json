@@ -1,0 +1,32 @@
+{
+  "suite_id": "agent-seek-public-v1",
+  "n": 50,
+  "agent_seek_wins": 37,
+  "baseline_wins": 13,
+  "ties": 0,
+  "errors": 0,
+  "judged": 50,
+  "by_tier": {
+    "L1": {
+      "n": 15,
+      "agent_seek_wins": 9,
+      "baseline_wins": 6,
+      "ties": 0,
+      "errors": 0
+    },
+    "L2": {
+      "n": 20,
+      "agent_seek_wins": 16,
+      "baseline_wins": 4,
+      "ties": 0,
+      "errors": 0
+    },
+    "L3": {
+      "n": 15,
+      "agent_seek_wins": 12,
+      "baseline_wins": 3,
+      "ties": 0,
+      "errors": 0
+    }
+  }
+}

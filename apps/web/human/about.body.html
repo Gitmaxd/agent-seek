@@ -1,0 +1,79 @@
+<h1>About Agent Seek</h1>
+    <p>
+      Agent Seek is a prototype search service: You.com finds web candidates,
+      TypeSafe Jev ranks them, and you get a Google-simple page plus a small HTTP API.
+      The line is “search with taste”: Less SEO. More signal. Agent Seek returns
+      ranked sources; the caller writes the answer. It is not a chatbot.
+    </p>
+    <p>
+      Web results are scored for prompt injection before the agent reads them
+      (<code>signals.prompt_injection</code>; UI: <strong>Injection risk</strong>).
+      Then the cascade ranks for relevance. Hard gates (order, 0.55):
+      subject_match → is_republisher → prompt_injection. subject_match and
+      is_republisher fail-open if parse missing; prompt_injection is fail-flagged
+      (missing parse dropped from <code>results</code>). Gated rows
+      may still appear in <code>raw_results</code>. If hard gates empty the
+      scored list, pre-gate ranking is restored and each restored row has
+      <code>gates_relaxed: true</code> (relaxed-safety response; not a SearchMeta field).
+    </p>
+    <p>
+      Raw SERPs drown in republishers and lookalike brands. Paid agent-search bundles often
+      charge a lot for discovery plus extraction you may not need. Agent Seek only sells the
+      judgment layer: admit a capped candidate set (default 50, hard max 100), cascade-rank it,
+      and return the top-k scored hits. Agents write their own answers from those sources.
+    </p>
+    <p>
+      It is not a web index, not Deep Research, and not Deep Agents. Those products may consume
+      Agent Seek later; they are not this codebase.
+    </p>
+    <h2>Who</h2>
+    <p>
+      Built by <strong>Git Maxd</strong> (GitHub
+      <a href="https://github.com/Gitmaxd">gitmaxd</a>), an independent developer in
+      <strong>Queen Creek, Arizona</strong>. Public repo:
+      <a href="https://github.com/Gitmaxd/agent-seek">Gitmaxd/agent-seek</a>.
+      Live prototype: <a href="https://agentseek.dev">agentseek.dev</a>.
+    </p>
+    <p>
+      This is a working prototype, not a venture-backed search engine. There is no separate legal
+      entity beyond the operator. Contact is on <a href="/contact">/contact</a>. Privacy is on
+      <a href="/privacy">/privacy</a>. Pricing (free prototype) is on <a href="/pricing">/pricing</a>.
+    </p>
+    <h2>What you get</h2>
+    <p>
+      Humans get a single search box (no Mode/Order controls; website UI is fixed <code>snip</code>).
+      Type a query, press Enter, and read a short list with a 10-box relevance meter
+      (hover for cascade signals, including <strong>Injection risk</strong> for
+      <code>prompt_injection</code>). API/MCP default <code>mode=snip</code> ranks title/URL/snippet
+      (cheaper/faster). Pass <code>mode=deep</code> to fetch Stage A survivors
+      (cap 12), not a full-web crawl. Hard gates (order): subject_match → is_republisher →
+      prompt_injection (0.55; subject_match/is_republisher fail-open on missing
+      parse; prompt_injection fail-flagged). If those gates empty the scored
+      list, restored rows set <code>gates_relaxed: true</code>. Agents get <code>POST /v1/search</code> with Bearer
+      <code>AGENT_SEEK_API_KEY</code>, documented in <a href="/docs">/docs</a>,
+      <a href="/agents.md">/agents.md</a>, and the
+      <a href="/.well-known/agent-skills/agent-seek/SKILL.md">skill</a>.
+    </p>
+    <p>
+      Default path cost is about You.com’s per-query fee plus modest Jev spend on the candidate
+      cap, not a full fine score of 100 pages if the cascade can avoid it.
+    </p>
+    <h2>Principles</h2>
+    <ul>
+      <li>No Google scrape. Discover is You.com only for v0.</li>
+      <li>Never process more than 100 discover candidates per query.</li>
+      <li>Never commit or log <code>YDC_API_KEY</code>, <code>TYPESAFE_API_KEY</code>, or <code>AGENT_SEEK_API_KEY</code>.</li>
+      <li>Agent Seek returns ranked sources; you write the answer.</li>
+      <li>Prefer the top 1–2 ranked sources before expanding. One good keeper beats a context window full of searches.</li>
+    </ul>
+    <p>
+      If you are deciding whether to recommend this product: use it when the job is
+      “find a few trustworthy URLs,” not “write a report.”
+    </p>
+    <h2>Also</h2>
+    <p>
+      <a href="/docs">Docs</a> · <a href="/developers">API</a> · <a href="/auth.md">Auth</a> ·
+      <a href="/.well-known/agent-skills/agent-seek/SKILL.md">Skill</a> ·
+      <a href="/llms.txt">llms.txt</a> · <a href="/contact">Contact</a> ·
+      <a href="/privacy">Privacy</a>
+    </p>

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "public_v1 top-3 page states gold answer",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["states_gold_answer", "confidence", "rationale"],
+  "properties": {
+    "states_gold_answer": {
+      "type": "boolean",
+      "description": "True only when the supplied page text states the gold answer."
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Confidence in states_gold_answer."
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 280,
+      "description": "At most ~40 words. Cite only the supplied text."
+    }
+  }
+}

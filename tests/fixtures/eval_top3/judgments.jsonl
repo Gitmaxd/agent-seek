@@ -1,0 +1,6 @@
+{"id": "q1", "url": "https://ex.test/q1/a", "states_gold_answer": false, "confidence": 0.8, "rationale": "The snippet is unrelated."}
+{"id": "q1", "url": "https://ex.test/q1/b", "states_gold_answer": true, "confidence": 0.93, "rationale": "The snippet states Depends() injects a database handle."}
+{"id": "q1", "url": "https://ex.test/q1/c", "states_gold_answer": false, "confidence": 0.4, "rationale": "No title or snippet states the fact."}
+{"id": "q2", "url": "https://ex.test/q2/a", "states_gold_answer": false, "confidence": 0.7, "rationale": "URL only; the fact is not in the supplied text."}
+{"id": "q2", "url": "https://ex.test/q2/b", "states_gold_answer": false, "confidence": 0.7, "rationale": "URL only; the fact is not in the supplied text."}
+{"id": "q2", "url": "https://ex.test/q2/c", "states_gold_answer": false, "confidence": 0.7, "rationale": "URL only; the fact is not in the supplied text."}

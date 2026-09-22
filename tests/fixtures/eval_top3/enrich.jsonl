@@ -1,0 +1,1 @@
+{"id": "q1", "q": "example one", "candidates": [{"url": "https://ex.test/q1/a", "title": "Other topic", "snippet": "Unrelated."}, {"url": "https://ex.test/q1/b", "title": "Dependencies", "snippet": "The widget uses Depends() to inject a database handle."}, {"url": "https://ex.test/q1/c", "title": "", "snippet": ""}]}

@@ -1,0 +1,302 @@
+[
+  {
+    "id": "p1-001",
+    "q": "FastAPI dependency injection tutorial",
+    "tier": "L1",
+    "intent": "official tutorial"
+  },
+  {
+    "id": "p1-002",
+    "q": "Postgres JSONB GIN index documentation",
+    "tier": "L1",
+    "intent": "official index docs"
+  },
+  {
+    "id": "p1-003",
+    "q": "RFC 9110 HTTP semantics",
+    "tier": "L1",
+    "intent": "canonical RFC"
+  },
+  {
+    "id": "p1-004",
+    "q": "React useEffect cleanup function",
+    "tier": "L1",
+    "intent": "official React docs"
+  },
+  {
+    "id": "p1-005",
+    "q": "Kubernetes liveness vs readiness probe",
+    "tier": "L1",
+    "intent": "official k8s docs"
+  },
+  {
+    "id": "p1-006",
+    "q": "SQLite WAL mode concurrency",
+    "tier": "L1",
+    "intent": "official SQLite docs"
+  },
+  {
+    "id": "p1-007",
+    "q": "Cloudflare Workers KV limits",
+    "tier": "L1",
+    "intent": "official KV limits"
+  },
+  {
+    "id": "p1-008",
+    "q": "OpenAPI 3.1 specification",
+    "tier": "L1",
+    "intent": "canonical spec"
+  },
+  {
+    "id": "p1-009",
+    "q": "Python asyncio TaskGroup",
+    "tier": "L1",
+    "intent": "official Python docs"
+  },
+  {
+    "id": "p1-010",
+    "q": "Redis Streams consumer groups",
+    "tier": "L1",
+    "intent": "official Redis docs"
+  },
+  {
+    "id": "p1-011",
+    "q": "GitHub Actions cache key documentation",
+    "tier": "L1",
+    "intent": "official Actions docs"
+  },
+  {
+    "id": "p1-012",
+    "q": "MDN Content-Security-Policy",
+    "tier": "L1",
+    "intent": "MDN CSP docs"
+  },
+  {
+    "id": "p1-013",
+    "q": "Docker multi-stage build best practices",
+    "tier": "L1",
+    "intent": "official Docker docs"
+  },
+  {
+    "id": "p1-014",
+    "q": "Prometheus histogram vs summary",
+    "tier": "L1",
+    "intent": "official Prometheus docs"
+  },
+  {
+    "id": "p1-015",
+    "q": "TLS 1.3 handshake overview",
+    "tier": "L1",
+    "intent": "authoritative TLS overview"
+  },
+  {
+    "id": "p1-016",
+    "q": "When was Next.js App Router stable",
+    "tier": "L2",
+    "intent": "product milestone date"
+  },
+  {
+    "id": "p1-017",
+    "q": "LangChain Deep Agents release announcement",
+    "tier": "L2",
+    "intent": "first-party launch post"
+  },
+  {
+    "id": "p1-018",
+    "q": "Factory.ai Droid skills documentation",
+    "tier": "L2",
+    "intent": "official product docs"
+  },
+  {
+    "id": "p1-019",
+    "q": "Vercel Fluid compute pricing limits",
+    "tier": "L2",
+    "intent": "pricing and limits"
+  },
+  {
+    "id": "p1-020",
+    "q": "Upstash Redis REST rate limits",
+    "tier": "L2",
+    "intent": "official rate limits"
+  },
+  {
+    "id": "p1-021",
+    "q": "Neon serverless Postgres branching docs",
+    "tier": "L2",
+    "intent": "official branching docs"
+  },
+  {
+    "id": "p1-022",
+    "q": "Anthropic tool use JSON schema",
+    "tier": "L2",
+    "intent": "official tool-use docs"
+  },
+  {
+    "id": "p1-023",
+    "q": "OpenAI structured outputs JSON schema",
+    "tier": "L2",
+    "intent": "official structured-output docs"
+  },
+  {
+    "id": "p1-024",
+    "q": "MCP streamable HTTP transport",
+    "tier": "L2",
+    "intent": "official MCP spec"
+  },
+  {
+    "id": "p1-025",
+    "q": "OAuth 2.1 authorization code PKCE",
+    "tier": "L2",
+    "intent": "canonical OAuth spec"
+  },
+  {
+    "id": "p1-026",
+    "q": "Cloudflare R2 egress pricing",
+    "tier": "L2",
+    "intent": "official R2 pricing"
+  },
+  {
+    "id": "p1-027",
+    "q": "Exe.dev persistent Linux VMs",
+    "tier": "L2",
+    "intent": "official product docs"
+  },
+  {
+    "id": "p1-028",
+    "q": "Cursor Background Agents documentation",
+    "tier": "L2",
+    "intent": "official product docs"
+  },
+  {
+    "id": "p1-029",
+    "q": "Temporal workflow vs activity",
+    "tier": "L2",
+    "intent": "official Temporal docs"
+  },
+  {
+    "id": "p1-030",
+    "q": "ClickHouse ReplacingMergeTree caveats",
+    "tier": "L2",
+    "intent": "official engine caveats"
+  },
+  {
+    "id": "p1-031",
+    "q": "Pydantic v2 model_validate vs parse_obj",
+    "tier": "L2",
+    "intent": "official Pydantic v2 docs"
+  },
+  {
+    "id": "p1-032",
+    "q": "HTTP 103 Early Hints browser support",
+    "tier": "L2",
+    "intent": "support vs spec"
+  },
+  {
+    "id": "p1-033",
+    "q": "WebAuthn discoverable credentials passkeys",
+    "tier": "L2",
+    "intent": "spec or MDN"
+  },
+  {
+    "id": "p1-034",
+    "q": "S3 conditional writes If-None-Match",
+    "tier": "L2",
+    "intent": "official S3 docs"
+  },
+  {
+    "id": "p1-035",
+    "q": "Postgres LISTEN NOTIFY connection pooling pitfalls",
+    "tier": "L2",
+    "intent": "pooling caveats"
+  },
+  {
+    "id": "p1-036",
+    "q": "Who created Redis",
+    "tier": "L3",
+    "intent": "authoritative bio vs SEO"
+  },
+  {
+    "id": "p1-037",
+    "q": "Original paper introducing the Transformer attention architecture",
+    "tier": "L3",
+    "intent": "primary paper vs rewrite"
+  },
+  {
+    "id": "p1-038",
+    "q": "Official X/Twitter profile for OpenAI",
+    "tier": "L3",
+    "intent": "canonical host vs scrapers"
+  },
+  {
+    "id": "p1-039",
+    "q": "NASA Instagram on the official Instagram host",
+    "tier": "L3",
+    "intent": "canonical Instagram vs viewers"
+  },
+  {
+    "id": "p1-040",
+    "q": "GitHub user torvalds",
+    "tier": "L3",
+    "intent": "canonical github.com profile"
+  },
+  {
+    "id": "p1-041",
+    "q": "Wikipedia English: Transformer (machine learning model) vs SEO blog summaries of Attention Is All You Need",
+    "tier": "L3",
+    "intent": "encyclopedia vs SEO rewrite"
+  },
+  {
+    "id": "p1-042",
+    "q": "Apple Vision Pro US release date",
+    "tier": "L3",
+    "intent": "official date vs rumor"
+  },
+  {
+    "id": "p1-043",
+    "q": "Difference between LangGraph and LangChain agents",
+    "tier": "L3",
+    "intent": "first-party distinction"
+  },
+  {
+    "id": "p1-044",
+    "q": "Official Solidity language documentation",
+    "tier": "L3",
+    "intent": "official vs tutorial-farm"
+  },
+  {
+    "id": "p1-045",
+    "q": "Cloudflare Workers vs Cloudflare Pages Functions",
+    "tier": "L3",
+    "intent": "official product distinction"
+  },
+  {
+    "id": "p1-046",
+    "q": "What is prompt injection? defensive overview for LLM applications",
+    "tier": "L3",
+    "intent": "educational defensive overview"
+  },
+  {
+    "id": "p1-047",
+    "q": "PyTorch 2.0 release date",
+    "tier": "L3",
+    "intent": "official release notes"
+  },
+  {
+    "id": "p1-048",
+    "q": "Who maintains the ripgrep project",
+    "tier": "L3",
+    "intent": "canonical maintainer"
+  },
+  {
+    "id": "p1-049",
+    "q": "Official Kubernetes security announcements / CVE channel vs random aggregators",
+    "tier": "L3",
+    "intent": "official security channel"
+  },
+  {
+    "id": "p1-050",
+    "q": "Stripe Tax vs Stripe Tax Calculations API distinction",
+    "tier": "L3",
+    "intent": "official API distinction"
+  }
+]

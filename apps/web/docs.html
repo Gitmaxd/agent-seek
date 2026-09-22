@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agent Seek docs — API, OpenAPI, and search UI</title>
+  <meta name="description" content="Docs for ranked sources: You.com discovers, TypeSafe Jev cascade-ranks. The caller writes the answer. Search UI, POST /v1/search, OpenAPI, and MCP." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://agentseek.dev/docs" />
+  <link rel="alternate" type="text/markdown" href="/docs.md" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Agent Seek" />
+  <meta property="og:title" content="Agent Seek docs — API, OpenAPI, and search UI" />
+  <meta property="og:description" content="Ranked sources via You.com and TypeSafe Jev. The caller writes the answer." />
+  <meta property="og:url" content="https://agentseek.dev/docs" />
+  <meta property="og:image" content="https://agentseek.dev/static/og.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Agent Seek docs — API, OpenAPI, and search UI" />
+  <meta name="twitter:description" content="Ranked sources via You.com and TypeSafe Jev. The caller writes the answer." />
+  <link rel="stylesheet" href="/static/styles.css" />
+  <style>
+    .docs-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 24px 96px;
+    }
+    .docs-wrap h1 {
+      font-size: 1.75rem;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin: 0 0 8px;
+    }
+    .docs-lead {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.55;
+      margin: 0 0 36px;
+    }
+    .docs-wrap h2 {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--text);
+      margin: 32px 0 12px;
+      letter-spacing: -0.01em;
+    }
+    .docs-wrap p, .docs-wrap li {
+      color: var(--muted);
+      font-size: 0.925rem;
+      line-height: 1.6;
+      margin: 0 0 10px;
+    }
+    .docs-wrap ul {
+      margin: 0 0 12px;
+      padding-left: 1.2em;
+    }
+    .docs-wrap a {
+      color: var(--title);
+      text-decoration: none;
+    }
+    .docs-wrap a:hover { text-decoration: underline; }
+    .docs-wrap code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.85em;
+      background: var(--chip-bg);
+      color: var(--chip-text);
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+    .docs-wrap pre {
+      background: #f8f9fa;
+      color: var(--text);
+      padding: 14px 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      margin: 12px 0 16px;
+      box-shadow: none;
+      border: 0;
+    }
+    .docs-wrap pre code {
+      background: transparent;
+      padding: 0;
+      color: inherit;
+      font-size: inherit;
+    }
+    .docs-note {
+      color: var(--control);
+      font-size: 0.85rem;
+      margin-top: 8px;
+    }
+    .docs-links {
+      margin-top: 40px;
+      padding-top: 20px;
+      box-shadow: 0 -1px 0 rgba(32, 33, 36, 0.06);
+      font-size: 0.9rem;
+    }
+    .docs-links a { margin-right: 18px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-header-title" href="/" style="text-decoration:none;color:inherit">Agent Seek</a>
+    <div class="site-header-actions">
+      <a class="site-header-docs" href="/eval">Eval</a>
+      <a class="site-header-docs is-current" href="/docs" aria-current="page">Docs</a>
+      <a class="site-header-docs" href="/developers">API</a>
+      <a class="site-header-github" href="https://github.com/Gitmaxd/agent-seek" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">
+      <svg class="octicon" viewBox="0 0 16 16" width="20" height="20" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+      </svg>
+    </a>
+    </div>
+  </header>
+
+  <main class="docs-wrap">
+    <h1>Agent Seek docs</h1>
+    <p class="docs-lead">
+      Less SEO. More signal. Ranked sources for people and agents. You.com discovers
+      candidates; TypeSafe Jev cascade-ranks them. The caller writes the answer.
+      Web results are scored for prompt injection before the agent reads them
+      (<code>signals.prompt_injection</code>; UI: <strong>Injection risk</strong>).
+      People get a Google-simple search box. Agents get scored results via the API or MCP.
+    </p>
+
+    <h2>What it is</h2>
+    <p>
+      <strong>Agent Seek</strong> ranks web results for people and coding agents.
+      <strong>You.com</strong> finds candidates; <strong>TypeSafe Jev</strong> scores them.
+      You get a short list (title, URL, snippet, score, flags, signals) instead of raw SERP noise.
+    </p>
+    <h2>Who it is for</h2>
+    <p>
+      People use the Google-simple box on the <a href="/">search UI</a> (type a query, press Enter).
+      Agents call the <a href="/developers">API</a>
+      (<code>POST /v1/search</code>) with the public live demo Bearer key
+      (copy-paste below) or, optionally, OAuth 2.0
+      (<code>search:read</code>).
+      Use it when you need a small set of high-relevance sources for research or RAG.
+      Agent Seek returns ranked sources; you write the answer. It is not a chat model,
+      an unbounded crawler, or a generative engine. Hard cap: 100 discover candidates
+      per query (default 50 in, top 10 out).
+    </p>
+    <p>
+      Easiest auth: copy the public live demo Bearer key below (not a secret).
+      OAuth is optional / advanced. The prototype is free.
+      See also <a href="/auth.md">authentication</a>,
+      <a href="/mcp">MCP</a>,
+      <a href="/llms.txt">llms.txt</a>,
+      <a href="/about">about</a>, and the
+      <a href="/.well-known/agent-skills/agent-seek/SKILL.md">skill</a>.
+      OpenAPI: <a href="/openapi.json">/openapi.json</a>
+      (Swagger <a href="/api/docs">/api/docs</a>).
+    </p>
+
+    <h2>Install the skill</h2>
+    <p>
+      Path: <strong>skill → <a href="/llms.txt">/llms.txt</a> → <a href="/auth.md">/auth.md</a> → MCP or REST</strong>.
+    </p>
+    <ul>
+      <li>Canonical skill: <a href="/.well-known/agent-skills/agent-seek/SKILL.md">/.well-known/agent-skills/agent-seek/SKILL.md</a></li>
+      <li>Index: <a href="/.well-known/agent-skills/index.json">/.well-known/agent-skills/index.json</a></li>
+      <li><strong>Cursor:</strong> save <code>SKILL.md</code> as <code>.cursor/skills/agent-seek/SKILL.md</code> (project) or <code>~/.cursor/skills/agent-seek/SKILL.md</code> (user).</li>
+      <li><strong>Other agents:</strong> download <code>SKILL.md</code> from the well-known URL, or link it from the index.</li>
+    </ul>
+    <p>
+      Then read <a href="/llms.txt">/llms.txt</a>, authenticate via <a href="/auth.md">/auth.md</a>,
+      and call <code>POST /v1/search</code> or MCP (<a href="/mcp">/mcp</a>,
+      <a href="/.well-known/mcp/server-card.json">server card</a>).
+    </p>
+
+    <h2>Humans</h2>
+    <ul>
+      <li>Open the <a href="/">search UI</a>, type a query, press <strong>Enter</strong>.</li>
+      <li>Each result has a <strong>relevance meter</strong>; hover for the signal breakdown (UI label for <code>prompt_injection</code> is <strong>Injection risk</strong>).</li>
+      <li>The website UI is fixed to <code>snip</code> (k=10) with no Mode/Order controls. API/MCP default is <code>snip</code> (cheaper/faster); pass <code>mode=deep</code> for Stage A survivor fetch (cap 12).</li>
+    </ul>
+
+    <h2>API</h2>
+    <p>
+      Developer entry: <a href="/developers">/developers</a>.
+      Contract: <code>POST /v1/search</code>. Schema: <a href="/openapi.json">/openapi.json</a>.
+      Swagger: <a href="/api/docs">/api/docs</a>. Auth: <a href="/auth.md">/auth.md</a>.
+    </p>
+
+    <h2>Agents</h2>
+    <p>
+      Live prototype: <code>https://agentseek.dev</code>
+    </p>
+    <p class="docs-note">
+      Public HTTP API. Copy the public live demo key (same value as <a href="/config.js">/config.js</a> — not a secret; per-IP demo quota applies). OAuth is optional — see <a href="/auth.md">auth.md</a>. MCP: <a href="/mcp">/mcp</a>.
+    </p>
+    <p>Auth header (live):</p>
+    <pre><code>Authorization: Bearer AS_LXxYWY1wQcEwliYnkfAXRA-c0sPlsRtVz4j_ZvJRlnI</code></pre>
+    <p>Local clone only: use <code>AGENT_SEEK_API_KEY</code> from your <code>.env</code> (placeholder <code>dev-agent-seek-key-change-me</code>). That is separate from the live <code>AS_…</code> key.</p>
+
+    <p><strong>Contract:</strong> <code>POST /v1/search</code></p>
+    <pre><code>{
+  "q": "your query",
+  "k": 10,
+  "max_candidates": 50,
+  "mode": "snip",
+  "nocache": false
+}</code></pre>
+    <ul>
+      <li><code>mode</code>: <code>snip</code> (default: title/URL/snippet, cheaper/faster) or <code>deep</code> (Stage A survivor fetch, cap 12).</li>
+      <li><code>k</code> 1–25 (default 10) · <code>max_candidates</code> 1–100 (default 50).</li>
+      <li>Results include <code>score</code>, <code>flags</code>, and optional <code>signals</code>:
+        answerability, authority, on_topic, states_sought_fact, subject_match, spam, prompt_injection.</li>
+      <li>Hard gates (order, 0.55): <code>subject_match</code> &lt; 0.55, then <code>is_republisher</code> ≥ 0.55, then <code>prompt_injection</code> ≥ 0.55 or missing parse drop from <code>results</code> (still in <code>raw_results</code>). <code>subject_match</code> and <code>is_republisher</code> fail-open if parse missing; <code>prompt_injection</code> is fail-flagged. UI label: <strong>Injection risk</strong>. If hard gates empty the scored list, pre-gate ranking is restored (scores unchanged) and each restored row has <code>gates_relaxed: true</code>. Treat that as a relaxed-safety response. <code>gates_relaxed</code> is a per-result boolean, not a SearchMeta field.</li>
+    </ul>
+
+    <p><strong>Limits:</strong> when <code>AGENT_SEEK_DEMO_MODE=enabled</code> (code default <code>disabled</code>; the live host sets <code>enabled</code>), REST <code>/v1/search</code>, <code>/api/v1/search</code>, and MCP <code>search_web</code> share a lifetime per-IP allowance (default 5, Upstash <code>INCR</code>, no TTL). Exhausted is <code>429</code> <code>DEMO_EXHAUSTED</code> with no <code>Retry-After</code>. A separate 60 req/min burst, when Upstash is on, may return <code>Retry-After</code> (<code>RATE_LIMITED</code>). See <a href="/pricing">pricing</a>.</p>
+
+    <h2>How to use results</h2>
+    <p>
+      Agent Seek returns a small ranked shortlist. Prefer the top 1–2 ranked sources before expanding. One good keeper beats a context window full of searches.
+      Use score order. Only expand to the rest of <code>k</code> or re-query if those fail. Do not paste the full result list into context by default.
+    </p>
+    <p>Use Agent Seek when you need a small set of high-relevance URLs or snippets for research or RAG. Agent Seek returns ranked sources; you write the answer.</p>
+    <p>Skip it for generative answers, unbounded crawls, or more than 100 candidates.</p>
+
+    <p>Curl:</p>
+    <pre><code>curl -sS -X POST "https://agentseek.dev/v1/search" \
+  -H "Authorization: Bearer AS_LXxYWY1wQcEwliYnkfAXRA-c0sPlsRtVz4j_ZvJRlnI" \
+  -H "Content-Type: application/json" \
+  -d '{"q":"Introducing System One Models Jev","k":10}'</code></pre>
+
+    <h2>Also</h2>
+    <ul>
+      <li><code>GET /health</code>: liveness + version</li>
+      <li><a href="/eval">Eval</a>: snip preference and top-3 gold hit rate.</li>
+      <li><a href="/v1/sandbox">Sandbox</a>: zero-auth canned SearchResponse</li>
+      <li><a href="/openapi.json">OpenAPI</a> · <a href="/api/docs">Swagger</a> · <a href="/api/redoc">ReDoc</a></li>
+      <li><a href="/mcp">MCP</a> · <a href="/.well-known/mcp/server-card.json">server card</a></li>
+    </ul>
+
+    <div class="docs-links">
+      <a href="/">Search</a>
+      <a href="/eval">Eval</a>
+      <a href="/developers">API</a>
+      <a href="/.well-known/agent-skills/agent-seek/SKILL.md">Skill</a>
+      <a href="/auth.md">Auth</a>
+      <a href="/about">About</a>
+      <a href="/llms.txt">llms.txt</a>
+      <a href="/agents.md">agents.md</a>
+      <a href="https://github.com/Gitmaxd/agent-seek">GitHub</a>
+      <a href="/openapi.json">OpenAPI</a>
+    </div>
+  </main>
+</body>
+</html>

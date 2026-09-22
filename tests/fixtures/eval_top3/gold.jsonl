@@ -1,0 +1,3 @@
+{"id": "q1", "tier": "L1", "q": "example one", "gold_answer": "The widget uses Depends() to inject a database handle.", "gold_notes": "Official tutorial wording is fine.", "locked": true}
+{"id": "q2", "tier": "L2", "q": "example two", "gold_answer": "GIN indexes JSONB for containment queries.", "gold_notes": "", "locked": true}
+{"id": "q3", "tier": "L3", "q": "example three", "gold_answer": "RFC 9110 defines HTTP semantics.", "gold_notes": "rfc-editor.org", "locked": true}

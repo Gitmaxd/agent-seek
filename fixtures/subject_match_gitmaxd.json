@@ -1,0 +1,59 @@
+{
+  "query": "Who is gitmaxd",
+  "candidates": [
+    {
+      "id": "gh_user",
+      "url": "https://github.com/gitmaxd",
+      "title": "gitmaxd · GitHub",
+      "snippet": "GitHub profile for gitmaxd — repositories and activity.",
+      "raw_rank": 1,
+      "subject_match": 0.94,
+      "expect_in_results": true
+    },
+    {
+      "id": "gh_repo",
+      "url": "https://github.com/Gitmaxd/deep-agents",
+      "title": "Gitmaxd/deep-agents",
+      "snippet": "Repos by Gitmaxd exploring deep agents.",
+      "raw_rank": 2,
+      "subject_match": 0.88,
+      "expect_in_results": true
+    },
+    {
+      "id": "cbi",
+      "url": "https://www.cbinsights.com/company/gitmax",
+      "title": "GitMax - CB Insights",
+      "snippet": "GitMax company overview, funding, and competitors.",
+      "raw_rank": 3,
+      "subject_match": 0.18,
+      "expect_in_results": false
+    },
+    {
+      "id": "corp",
+      "url": "https://www.gitmax.com/",
+      "title": "GitMax — Home",
+      "snippet": "Official site for GitMax software company.",
+      "raw_rank": 4,
+      "subject_match": 0.15,
+      "expect_in_results": false
+    },
+    {
+      "id": "clutch",
+      "url": "https://clutch.co/profile/gitmax",
+      "title": "GitMax Reviews | Clutch",
+      "snippet": "Clutch profile for GitMax development agency.",
+      "raw_rank": 5,
+      "subject_match": 0.22,
+      "expect_in_results": false
+    },
+    {
+      "id": "parse_miss",
+      "url": "https://example.com/maybe-related",
+      "title": "Maybe related",
+      "snippet": "Ambiguous page with no clear entity signal.",
+      "raw_rank": 6,
+      "subject_match": null,
+      "expect_in_results": true
+    }
+  ]
+}

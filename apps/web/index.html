@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agent Seek — Less SEO. More signal.</title>
+  <meta name="description" content="Less SEO. More signal. Ranked sources for people and agents: You.com discovers candidates; TypeSafe Jev cascade-ranks them. The caller writes the answer. Search box on the site; POST /v1/search for agents." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="{{BASE_URL}}/" />
+  <link rel="alternate" type="text/markdown" href="{{BASE_URL}}/index.md" />
+  <link rel="ard" href="{{BASE_URL}}/.well-known/ard.json" />
+  <link rel="api-catalog" href="{{BASE_URL}}/.well-known/api-catalog" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Agent Seek" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Agent Seek — Less SEO. More signal." />
+  <meta property="og:description" content="Less SEO. More signal. Ranked sources for people and agents: You.com discovers; TypeSafe Jev cascade-ranks. The caller writes the answer." />
+  <meta property="og:url" content="{{BASE_URL}}/" />
+  <meta property="og:image" content="{{BASE_URL}}/static/og.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Agent Seek — Less SEO. More signal." />
+  <meta name="twitter:description" content="Less SEO. More signal. Ranked sources for people and agents: You.com discovers; TypeSafe Jev cascade-ranks. The caller writes the answer." />
+  <meta name="twitter:image" content="{{BASE_URL}}/static/og.svg" />
+  <link rel="stylesheet" href="/static/styles.css" />
+  {{JSON_LD}}
+  <script src="/config.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-header-title" href="/">Agent Seek</a>
+    <div class="site-header-actions">
+      <a class="site-header-docs" href="/eval">Eval</a>
+      <a class="site-header-docs" href="/docs">Docs</a>
+      <a class="site-header-docs" href="/developers">API</a>
+      <a class="site-header-github" href="https://github.com/Gitmaxd/agent-seek" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">
+      <svg class="octicon" viewBox="0 0 16 16" width="20" height="20" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+      </svg>
+    </a>
+    </div>
+  </header>
+  <main class="wrap">
+    <header class="hero">
+      <h1 class="logo">Less SEO. More signal.</h1>
+      <p class="tagline">Progressive Disclosure Search Ranking</p>
+      <form id="search-form" class="search-form" autocomplete="off" toolname="search_web" tooldescription="Search the web with Agent Seek ranked results (You.com discover plus TypeSafe Jev cascade).">
+        <input id="q" name="q" type="search" placeholder="Search the web…" required maxlength="500" autofocus toolparamdescription="Search query (1-500 characters)" />
+        <button type="submit" id="go" class="visually-hidden">Search</button>
+      </form>
+      {{HOME_AGENT_CALLOUT}}
+    </header>
+    <p id="status" class="status" hidden></p>
+    <p id="results-heading" class="visually-hidden" hidden>Results</p>
+    <section id="results" class="results" aria-live="polite" aria-labelledby="results-heading"></section>
+  </main>
+{{HOME_PROSE}}
+{{HOME_FOOTER}}
+  <dialog id="demo-exhausted" class="demo-dialog" aria-labelledby="demo-exhausted-title">
+    <p id="demo-exhausted-title" class="demo-dialog-title">Demo complete</p>
+    <p>You have used your 5 free searches on this public website demo. There is no time-based reset.</p>
+    <p>Clone the repo and run it locally (README quickstart): copy <code>.env.example</code> to <code>.env</code>, then start uvicorn.</p>
+    <p class="demo-dialog-cmd">git clone https://github.com/Gitmaxd/agent-seek.git</p>
+    <div class="demo-dialog-actions">
+      <a href="https://github.com/Gitmaxd/agent-seek" target="_blank" rel="noopener noreferrer">GitHub repo</a>
+      <button type="button" class="demo-dialog-close" id="demo-exhausted-close">Close</button>
+    </div>
+  </dialog>
+  <script src="/static/app.js"></script>
+  <script src="/static/webmcp.js"></script>
+</body>
+</html>

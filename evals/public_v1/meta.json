@@ -1,0 +1,20 @@
+{
+  "suite_id": "agent-seek-public-v1",
+  "version": "1.0.0",
+  "k": 10,
+  "max_candidates": 50,
+  "mode_default": "deep",
+  "baseline": "you_com_order",
+  "treatment": "agent_seek_cascade",
+  "judge": {
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "reasoning_mode": "standard",
+    "api": "responses",
+    "prompt_version": "v1"
+  },
+  "blinding": "random A/B assignment per query, mapping stored in run output only",
+  "discover_pool": "single You.com discover per query; baseline and treatment share that candidate list",
+  "prompt_path": "judge/PROMPT_v1.md",
+  "schema_path": "judge/schema.json"
+}

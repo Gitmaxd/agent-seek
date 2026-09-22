@@ -1,0 +1,52 @@
+{
+  "model": "jev-latest",
+  "answers": {
+    "c0__answerability": {
+      "type": "score",
+      "score": 3.7,
+      "legend": {
+        "0": "Irrelevant — does not help answer the query",
+        "1": "Weak — tangentially related or thin signal; little usable evidence in title/snippet",
+        "2": "Useful — materially helps; partial evidence or strong topical coverage without the exact asked fact",
+        "3": "Strong — directly addresses the query with clear evidence in title/snippet",
+        "4": "Answers outright — title or snippet states the specific fact the query asks for"
+      },
+      "probabilities": { "0": 0.01, "1": 0.02, "2": 0.1, "3": 0.3, "4": 0.57 },
+      "confidence": 0.72
+    },
+    "c0__authority": { "type": "noul", "noul": 0.92 },
+    "c0__on_topic": { "type": "noul", "noul": 0.97 },
+    "c0__states_sought_fact": { "type": "noul", "noul": 0.85 },
+    "c1__answerability": {
+      "type": "score",
+      "score": 3.1,
+      "legend": { "0": "Irrelevant", "1": "Weak", "2": "Useful", "3": "Strong", "4": "Answers outright" },
+      "probabilities": { "0": 0.02, "1": 0.05, "2": 0.15, "3": 0.45, "4": 0.33 },
+      "confidence": 0.55
+    },
+    "c1__authority": { "type": "noul", "noul": 0.95 },
+    "c1__on_topic": { "type": "noul", "noul": 0.9 },
+    "c1__states_sought_fact": { "type": "noul", "noul": 0.4 },
+    "c3__answerability": {
+      "type": "score",
+      "score": 1.4,
+      "legend": { "0": "Irrelevant", "1": "Weak", "2": "Useful", "3": "Strong", "4": "Answers outright" },
+      "probabilities": { "0": 0.2, "1": 0.4, "2": 0.25, "3": 0.1, "4": 0.05 },
+      "confidence": 0.4
+    },
+    "c3__authority": { "type": "noul", "noul": 0.2 },
+    "c3__on_topic": { "type": "noul", "noul": 0.42 },
+    "c3__states_sought_fact": { "type": "noul", "noul": 0.15 },
+    "c4__answerability": {
+      "type": "score",
+      "score": 3.4,
+      "legend": { "0": "Irrelevant", "1": "Weak", "2": "Useful", "3": "Strong", "4": "Answers outright" },
+      "probabilities": { "0": 0.02, "1": 0.04, "2": 0.12, "3": 0.4, "4": 0.42 },
+      "confidence": 0.6
+    },
+    "c4__authority": { "type": "noul", "noul": 0.9 },
+    "c4__on_topic": { "type": "noul", "noul": 0.88 },
+    "c4__states_sought_fact": { "type": "noul", "noul": 0.55 }
+  },
+  "usage": { "input_tokens": 900, "output_tokens": 60 }
+}

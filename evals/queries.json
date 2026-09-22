@@ -1,0 +1,139 @@
+[
+  {
+    "q": "Introducing System One Models Jev",
+    "relevant_url_substrings": [
+      "typesafe.ai"
+    ]
+  },
+  {
+    "q": "TypeSafe Jev systemone API",
+    "relevant_url_substrings": [
+      "typesafe.ai",
+      "docs.typesafe"
+    ]
+  },
+  {
+    "q": "William Stanley Jevons paradox",
+    "relevant_url_substrings": [
+      "wikipedia.org",
+      "jevons"
+    ]
+  },
+  {
+    "q": "FastAPI dependency injection tutorial",
+    "relevant_url_substrings": [
+      "fastapi.tiangolo",
+      "fastapi"
+    ]
+  },
+  {
+    "q": "You.com web search API documentation",
+    "relevant_url_substrings": [
+      "you.com"
+    ]
+  },
+  {
+    "q": "Postgres JSONB indexing GIN",
+    "relevant_url_substrings": [
+      "postgresql.org",
+      "postgres"
+    ]
+  },
+  {
+    "q": "RFC 9110 HTTP semantics",
+    "relevant_url_substrings": [
+      "rfc-editor",
+      "ietf"
+    ]
+  },
+  {
+    "q": "React useEffect cleanup function",
+    "relevant_url_substrings": [
+      "react.dev",
+      "reactjs"
+    ]
+  },
+  {
+    "q": "Kubernetes liveness vs readiness probe",
+    "relevant_url_substrings": [
+      "kubernetes.io"
+    ]
+  },
+  {
+    "q": "SQLite WAL mode concurrency",
+    "relevant_url_substrings": [
+      "sqlite.org"
+    ]
+  },
+  {
+    "q": "OpenAI structured outputs JSON schema",
+    "relevant_url_substrings": [
+      "openai.com",
+      "platform.openai"
+    ]
+  },
+  {
+    "q": "Cloudflare Workers KV limits",
+    "relevant_url_substrings": [
+      "cloudflare.com",
+      "developers.cloudflare"
+    ]
+  },
+  {
+    "q": "Python asyncio gather return_exceptions",
+    "relevant_url_substrings": [
+      "docs.python.org",
+      "python.org"
+    ]
+  },
+  {
+    "q": "Vite environment variables import.meta.env",
+    "relevant_url_substrings": [
+      "vitejs.dev",
+      "vite"
+    ]
+  },
+  {
+    "q": "LangChain tool calling agents",
+    "relevant_url_substrings": [
+      "langchain",
+      "python.langchain"
+    ]
+  },
+  {
+    "q": "Neon serverless postgres branching",
+    "relevant_url_substrings": [
+      "neon.tech"
+    ]
+  },
+  {
+    "q": "httpx AsyncClient timeout",
+    "relevant_url_substrings": [
+      "www.python-httpx.org",
+      "httpx"
+    ]
+  },
+  {
+    "q": "What date did LangChain introduce Deep Agents",
+    "relevant_url_substrings": [
+      "docs.langchain",
+      "langchain.com",
+      "changelog.langchain",
+      "github.com/langchain-ai/deepagents"
+    ]
+  },
+  {
+    "q": "MDN AbortController fetch timeout",
+    "relevant_url_substrings": [
+      "developer.mozilla.org",
+      "mdn"
+    ]
+  },
+  {
+    "q": "Django ORM select_related vs prefetch_related",
+    "relevant_url_substrings": [
+      "docs.djangoproject.com",
+      "djangoproject"
+    ]
+  }
+]

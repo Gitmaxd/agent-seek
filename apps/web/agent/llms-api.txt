@@ -1,0 +1,40 @@
+# Agent Seek API
+
+Scoped index for the HTTP API and MCP transport. Full site index: [/llms.txt](/llms.txt).
+
+Start at [/llms.txt](/llms.txt). [Install the skill](/llms.txt#install-the-skill) from the canonical URL [/.well-known/agent-skills/agent-seek/SKILL.md](/.well-known/agent-skills/agent-seek/SKILL.md), then [/auth.md](/auth.md).
+
+## Public discovery (zero-auth)
+
+- [GET /api](/api) — machine-readable API index
+- [GET /v1](/v1) — same index at the versioned root
+- [GET /health](/health) — liveness + version
+- [Agent Seek sandbox](/v1/sandbox) — canned SearchResponse, no key, no upstream calls
+- [Agent Seek OpenAPI](/openapi.json)
+- [Swagger](/api/docs) · [api/docs.md](/api/docs.md) · [ReDoc](/api/redoc)
+
+## Authenticated search
+
+- `POST /v1/search` and `GET /v1/search` — canonical
+- `POST /api/v1/search` — alias
+- `GET /api/v1` — 401 + `WWW-Authenticate: Bearer resource_metadata="…"` unless you send a Bearer token
+
+Web results are scored for prompt injection before the agent reads them (`signals.prompt_injection`; UI: **Injection risk**). Default `mode=snip` (title/URL/snippet; cheaper/faster). Pass `mode=deep` for Stage A survivor fetch (cap 12; not a full-web crawl). Website UI is fixed `snip`. `k` default 10 (1–25); `max_candidates` default 50 (≤100).
+
+Signals: answerability, authority, on_topic, states_sought_fact, subject_match, spam, prompt_injection (UI: **Injection risk**). Hard gates (order): subject_match → is_republisher → prompt_injection (0.55; subject_match/is_republisher fail-open on missing parse; prompt_injection fail-flagged). If hard gates empty the scored list, pre-gate ranking is restored and each restored row has `gates_relaxed: true` (relaxed-safety response; not a SearchMeta field).
+
+Auth: public live demo Bearer `AS_LXxYWY1wQcEwliYnkfAXRA-c0sPlsRtVz4j_ZvJRlnI`, local `Authorization: Bearer $AGENT_SEEK_API_KEY`, or OAuth 2.0 `search:read`. Walkthrough: [/auth.md](/auth.md).
+
+## Errors and versioning
+
+API 4xx/5xx use RFC 9457 `application/problem+json` (`type`, `title`, `status`, `detail`, `code`, `message`, `hint`). Versioning and Sunset policy: [/docs/versioning.md](/docs/versioning.md). `/v1` is current; `/v2` is not published.
+
+When `AGENT_SEEK_DEMO_MODE=enabled` (live host; code default `disabled`), REST `/v1/search`, `/api/v1/search`, and MCP `search_web` share a lifetime per-IP allowance (default 5, Upstash `INCR`, no TTL). Exhausted → `429` `code=DEMO_EXHAUSTED`, no `Retry-After`. Burst limit when Upstash is on: 60 requests/minute per client IP on search and `search_web` (`429` `code=RATE_LIMITED`, may include `Retry-After`). See [/pricing.md](/pricing.md).
+
+## MCP
+
+- Agent Seek MCP Streamable HTTP: [/mcp](/mcp) · [/.well-known/mcp](/.well-known/mcp)
+- Agent Seek MCP server card: [/.well-known/mcp/server-card.json](/.well-known/mcp/server-card.json)
+- A2A card: [/.well-known/agent-card.json](/.well-known/agent-card.json)
+
+Tools: `search_web`, `get_service_health`, `get_api_docs`, `list_search_capabilities`.

@@ -1,0 +1,113 @@
+<h1>Agent Seek API</h1>
+    <p>
+      How agents and scripts get ranked sources without the HTML UI. Less SEO. More signal.
+      You.com discovers candidates; TypeSafe Jev cascade-ranks them; you receive scored JSON
+      (<code>url</code>, <code>title</code>, <code>snippet</code>, <code>score</code>,
+      <code>flags</code>, <code>signals</code>). The caller writes the answer.
+      Web results are scored for prompt injection before the agent reads them
+      (<code>signals.prompt_injection</code>; UI: <strong>Injection risk</strong>).
+    </p>
+    <p>There is no contact-sales form and no waitlist. Self-serve paths are live on this host.</p>
+    <h2>Self-serve access</h2>
+    <h3>Zero-auth (sandbox)</h3>
+    <p>These need no key. Use them to confirm the API is reachable:</p>
+    <pre><code>curl -sS https://agentseek.dev/health
+curl -sS https://agentseek.dev/v1
+curl -sS https://agentseek.dev/api
+curl -sS https://agentseek.dev/v1/sandbox
+curl -sS https://agentseek.dev/openapi.json</code></pre>
+    <p>
+      <code>GET /v1/sandbox</code> returns a canned <code>SearchResponse</code> so you can parse
+      <code>results[]</code> and <code>meta</code> without spending You.com or Jev.
+    </p>
+    <h3>Live demo (public Bearer)</h3>
+    <p>
+      Copy the public demo key (not a secret — same value as
+      <a href="/config.js"><code>/config.js</code></a>):
+    </p>
+    <pre><code>Authorization: Bearer AS_LXxYWY1wQcEwliYnkfAXRA-c0sPlsRtVz4j_ZvJRlnI</code></pre>
+    <pre><code>curl -sS -X POST https://agentseek.dev/v1/search \
+  -H "Authorization: Bearer AS_LXxYWY1wQcEwliYnkfAXRA-c0sPlsRtVz4j_ZvJRlnI" \
+  -H "Content-Type: application/json" \
+  -d '{"q":"Introducing System One Models Jev","k":10}'</code></pre>
+    <p>
+      This is the main live path for <code>POST /v1/search</code> and MCP <code>search_web</code> on
+      <code>https://agentseek.dev</code>. It burns operator You.com / TypeSafe quota and the per-IP
+      demo limit. It does not unlock upstream secrets. The live host does not mint self-serve
+      API keys.
+    </p>
+    <h3>Local / self-host API key</h3>
+    <pre><code>cp .env.example .env   # set AGENT_SEEK_API_KEY (and your own YDC / TypeSafe keys)
+uvicorn apps.api.main:app --port 8787
+curl -sS -X POST http://127.0.0.1:8787/v1/search \
+  -H "Authorization: Bearer $AGENT_SEEK_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"q":"Introducing System One Models Jev","k":10}'</code></pre>
+    <p>
+      Local <code>AGENT_SEEK_API_KEY</code> is separate from the live <code>AS_…</code> demo key.
+    </p>
+    <h3>Optional / advanced: OAuth DCR</h3>
+    <p>
+      Prefer Dynamic Client Registration or PKCE instead of the public demo key? See
+      <a href="/auth.md">auth.md</a>. Brief entry points:
+      <code>POST /agent/identity</code> with <code>{"type":"anonymous"}</code>, or
+      <code>POST /oauth2/register</code>. Metadata:
+      <a href="/.well-known/oauth-authorization-server">OAuth AS</a>,
+      <a href="/.well-known/oauth-protected-resource">protected resource</a>.
+      You do not need OAuth to try the live demo.
+    </p>
+    <h2>Predictable paths</h2>
+    <table>
+      <thead><tr><th>Resource</th><th>Path</th></tr></thead>
+      <tbody>
+        <tr><td>Search</td><td><code>POST /v1/search</code> and <code>GET /v1/search</code></td></tr>
+        <tr><td>Search alias</td><td><code>POST /api/v1/search</code></td></tr>
+        <tr><td>Public index</td><td><code>GET /v1</code> · <code>GET /api</code></td></tr>
+        <tr><td>Sandbox example</td><td><code>GET /v1/sandbox</code></td></tr>
+        <tr><td>OpenAPI 3.1</td><td><code>/openapi.json</code></td></tr>
+        <tr><td>Swagger UI</td><td><code>/api/docs</code> · <a href="/api/docs.md">api/docs.md</a></td></tr>
+        <tr><td>ReDoc</td><td><code>/api/redoc</code></td></tr>
+        <tr><td>Health</td><td><code>/health</code></td></tr>
+        <tr><td>Versioning / Sunset</td><td><code>/docs/versioning.md</code></td></tr>
+        <tr><td>Product docs</td><td><code>/docs</code></td></tr>
+        <tr><td>Auth walkthrough</td><td><code>/auth.md</code></td></tr>
+        <tr><td>Agent skill</td><td><code>/.well-known/agent-skills/agent-seek/SKILL.md</code></td></tr>
+      </tbody>
+    </table>
+    <p>Live prototype: <code>https://agentseek.dev</code></p>
+    <h2>When to call</h2>
+    <p>
+      Use the API for a small set of high-relevance ranked web results for research or RAG.
+      Agent Seek returns ranked sources; you write the answer. Hard cap: 100 discover candidates
+      per query. Prefer the top 1–2 ranked sources before expanding. One good keeper beats a
+      context window full of searches. Do not dump all <code>k</code> results into context by
+      default.
+    </p>
+    <h2><code>POST /v1/search</code></h2>
+    <pre><code>{
+  "q": "Introducing System One Models Jev",
+  "k": 10,
+  "max_candidates": 50,
+  "mode": "snip",
+  "nocache": false
+}</code></pre>
+    <ul>
+      <li><code>q</code> required, 1–500 characters</li>
+      <li><code>k</code> 1–25 (default 10)</li>
+      <li><code>max_candidates</code> 1–100 (default 50)</li>
+      <li><code>mode</code> <code>snip</code> (default: title/URL/snippet, cheaper/faster) or <code>deep</code> (Stage A survivor fetch, cap 12; not a full-web crawl). Website UI is fixed <code>snip</code>.</li>
+      <li>Optional <code>signals</code>: answerability, authority, on_topic, states_sought_fact, subject_match, spam, prompt_injection (UI: <strong>Injection risk</strong>)</li>
+      <li>Hard gates (order, 0.55): <code>subject_match</code> &lt; 0.55, then <code>is_republisher</code> ≥ 0.55, then <code>prompt_injection</code> ≥ 0.55 or missing parse drop from <code>results</code>. <code>subject_match</code> and <code>is_republisher</code> fail-open if parse missing; <code>prompt_injection</code> is fail-flagged. If hard gates empty the scored list, pre-gate ranking is restored (scores unchanged) and each restored row has <code>gates_relaxed: true</code>. Treat that as a relaxed-safety response. <code>gates_relaxed</code> is a per-result boolean, not a SearchMeta field.</li>
+    </ul>
+    <p>Unauthenticated calls return <strong>401</strong> <code>application/problem+json</code> with</p>
+    <pre><code>WWW-Authenticate: Bearer resource_metadata="https://agentseek.dev/.well-known/oauth-protected-resource"</code></pre>
+    <p><strong>Burst rate limit:</strong> optional Upstash sliding window, 60 requests / minute / client IP on search and MCP <code>search_web</code> when enabled. That <code>429</code> is <code>code=RATE_LIMITED</code> and may include <code>Retry-After</code>.</p>
+    <p><strong>Website demo quota:</strong> when <code>AGENT_SEEK_DEMO_MODE=enabled</code> (code default <code>disabled</code>; the live host sets <code>enabled</code>), REST <code>/v1/search</code>, <code>/api/v1/search</code>, and MCP <code>search_web</code> share a lifetime per-IP allowance (default 5, Upstash <code>INCR</code>, no TTL). Exhausted → <code>429</code> <code>application/problem+json</code> with <code>code=DEMO_EXHAUSTED</code> and no <code>Retry-After</code>. See <a href="/pricing">pricing</a>.</p>
+    <h2>Related</h2>
+    <ul>
+      <li><a href="/docs">Docs</a></li>
+      <li><a href="/.well-known/agent-skills/agent-seek/SKILL.md">Skill</a></li>
+      <li><a href="/agents.md">agents.md</a></li>
+      <li><a href="/about">About</a> · <a href="/contact">Contact</a></li>
+      <li><a href="/openapi.json">OpenAPI</a> · <a href="/pricing">pricing</a></li>
+    </ul>

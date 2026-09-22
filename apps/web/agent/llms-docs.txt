@@ -1,0 +1,31 @@
+# Agent Seek docs
+
+Less SEO. More signal. Agent Seek returns ranked sources; the caller writes the answer. Prefer the top 1–2 ranked sources before expanding. One good keeper beats a context window full of searches.
+
+Scoped index for product documentation. Full site index: [/llms.txt](/llms.txt).
+
+Start at [/llms.txt](/llms.txt). [Install the skill](/llms.txt#install-the-skill) from the canonical URL [/.well-known/agent-skills/agent-seek/SKILL.md](/.well-known/agent-skills/agent-seek/SKILL.md), then [/auth.md](/auth.md).
+
+Agent Seek is ranked web search: You.com discovers candidates, TypeSafe Jev cascade-ranks them, and you get scored URLs + snippets. Web results are scored for prompt injection before the agent reads them (`signals.prompt_injection`; UI: **Injection risk**). Humans use the Google-simple UI (fixed `snip`, no Mode/Order). Agents use `POST /v1/search` or MCP (default `mode=snip`, title/URL/snippet; pass `mode=deep` for Stage A survivor fetch cap 12). Hard gates (order): subject_match → is_republisher → prompt_injection (0.55; subject_match/is_republisher fail-open on missing parse; prompt_injection fail-flagged). If hard gates empty the scored list, pre-gate ranking is restored and each restored row has `gates_relaxed: true` (relaxed-safety response; not a SearchMeta field).
+
+When `AGENT_SEEK_DEMO_MODE=enabled`, REST `/v1/search`, `/api/v1/search`, and MCP `search_web` share a lifetime per-IP allowance (default 5). Exhausted is `429` `DEMO_EXHAUSTED` with no `Retry-After`. See [pricing.md](/pricing.md).
+
+## When to use this section
+
+Read these pages when you need the human-and-agent product manual — not the raw OpenAPI schema (see [/api/llms.txt](/api/llms.txt)) and not the key/OAuth onboarding walkthrough (see [/developers/llms.txt](/developers/llms.txt)).
+
+## Docs in this area
+
+- [Agent Seek docs](/docs) · [docs.md](/docs.md)
+- [Eval](/eval) · [eval.md](/eval.md)
+- [Homepage markdown](/index.md)
+- [agents.md](/agents.md) — public agent how-to
+- [About](/about) · [about.md](/about.md)
+- [Pricing](/pricing) · [pricing.md](/pricing.md)
+- [Privacy](/privacy) · [privacy.md](/privacy.md)
+- [Contact](/contact) · [contact.md](/contact.md)
+- [API versioning / Sunset policy](/docs/versioning.md)
+- [Auth walkthrough](/docs/auth.md) (same body as [/auth.md](/auth.md))
+- [Agent Seek skill](/.well-known/agent-skills/agent-seek/SKILL.md)
+
+Do not ask Agent Seek to write answers. Hard cap: 100 discover candidates per query.

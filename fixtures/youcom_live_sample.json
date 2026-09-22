@@ -1,0 +1,147 @@
+{
+  "results": {
+    "web": [
+      {
+        "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+        "title": "Introducing System One Models & Jev - TypeSafe AI Blog",
+        "description": "TypeSafe AI is an AI lab building machine-native intelligence infrastructure for automation, designed to make decisions within software. Try our first System One Model, Jev, in early access.",
+        "thumbnail_url": "https://framerusercontent.com/images/RtIGTDwO43jR4ZDilesXiR5znc.jpg",
+        "original_thumbnail_url": "https://framerusercontent.com/images/RtIGTDwO43jR4ZDilesXiR5znc.jpg",
+        "page_age": "2026-09-15T20:58:26",
+        "favicon_url": "https://you.com/favicon?domain=typesafe.ai&size=128",
+        "snippets": [
+          "I am beyond excited to announce that today, TypeSafe AI is releasing our first System One Model: a new class of frontier models built to make fast, structured decisions that software can use directly. We built a new stack entirely focused on automation: with a new model architecture, parallel sampler for maximum efficiency, and training method we call Reinforcement Learning for Calibrated Decisions (RLCD). Our first public model is Jev, available today in early access.",
+          "The relatively shorter input paints our model in an advantageous light. For the keen eyed, for the recorded run, the only disagreement with GPT-5.6 Terra is on \u201cChurn likelihood level\u201d. The actual answer seems genuinely ambiguous to us. We used GPT-5.6 Terra with default reasoning for this example, because we\u2019ve found it to be the most comparable at intelligence to Jev on average. Fun fact: a similar demo was what convinced us to go all-in in the direction of System One Models!",
+          "We want to hear which decisions you need to automate, where Jev works, and where it falls short. Tell us what sci-fi you want to build!! We started TypeSafe because we believe that AI needs an interface software could depend on. We can't wait to see new use cases continuously diffuse through the community and economy. Where do the names \u201cSystem One Models\u201d and \u201cJev\u201d come from?",
+          "For reasons we will get into in the future, we believe System One Models can be made more reliable than its alternatives. We named Jev after William Stanley Jevons. We expect machine intelligence to follow a similar path to coal, after steam-engine efficiency led to an increase in demand."
+        ]
+      },
+      {
+        "url": "https://typesafe.ai/",
+        "title": "Home - TypeSafe AI",
+        "description": "After two years in stealth, we\u2019re excited to finally introduce a new intelligence primitive for software. ... TL;DR: Compute drives progress in AI, but what good is progress if you are not doing the right task! AI: too good to be true, too bad to be useful | TypeSafe AI ... RLHF-trained language models please humans and assist rather than make reliable autonomous decisions. What comes next? ... System One Models are a new class of AI model built for decisions inside software. Jev ...",
+        "thumbnail_url": "https://framerusercontent.com/images/RtIGTDwO43jR4ZDilesXiR5znc.jpg",
+        "original_thumbnail_url": "https://framerusercontent.com/images/RtIGTDwO43jR4ZDilesXiR5znc.jpg",
+        "page_age": "2026-09-19T16:58:26",
+        "favicon_url": "https://you.com/favicon?domain=typesafe.ai&size=128",
+        "snippets": [
+          "After two years in stealth, we\u2019re excited to finally introduce a new intelligence primitive for software. ... TL;DR: Compute drives progress in AI, but what good is progress if you are not doing the right task! AI: too good to be true, too bad to be useful | TypeSafe AI ... RLHF-trained language models please humans and assist rather than make reliable autonomous decisions. What comes next? ... System One Models are a new class of AI model built for decisions inside software. Jev is TypeSafe\u2019s first public System One Model, optimized for automation.",
+          "TypeSafe AI is an AI lab building machine-native intelligence infrastructure for automation, designed to make decisions within software. Try our first System One Model, Jev, in early access.",
+          "We built a new class of models, System One Models, to be natively used by machines.",
+          "Jev returns typed decisions with calibrated probabilities, so your software can account for uncertainty. Set the thresholds for when it acts autonomously and when it asks for review."
+        ]
+      },
+      {
+        "url": "https://www.datacamp.com/blog/system-one-models-jev",
+        "title": "Jev: TypeSafe's System One Model That Never Hallucinates",
+        "description": "If you want to understand the decision problems Jev is built for, our AI Fundamentals skill track covers the classification and calibration concepts underneath it. A System One model is a class of AI, introduced by TypeSafe, that makes fast, structured decisions instead of generating text.",
+        "page_age": "2026-09-16T20:53:25",
+        "favicon_url": "https://you.com/favicon?domain=www.datacamp.com&size=128",
+        "snippets": [
+          "TypeSafe's Jev is a System One model that returns typed decisions instead of text, running 40-200x faster and 40-400x cheaper than frontier LLMs like GPT-6.",
+          "TypeSafe's headline claims are that Jev runs 40x-200x faster than frontier LLMs on comparable tasks, costs $0.042 per million input tokens with free output, and mathematically cannot hallucinate or produce type errors. In this article, I'll cover what a System One model actually is, how Jev differs from a standard LLM, what the workflow benchmarks show against other models, and where I think it fits in a real stack.",
+          "For deeper coverage of the models Jev is measured against, see our comparisons of GPT-5.6 Terra vs Claude Sonnet 5 and Claude Opus 5 vs GPT-5.6 Sol. Jev is TypeSafe's first System One model: it returns typed decisions with calibrated probabilities, not text.",
+          "Jev is for when you need high-volume, repeated decisions over a shared state where the possible answers are known up front. A System One model is a frontier AI model that returns typed probabilistic decisions instead of text."
+        ]
+      },
+      {
+        "url": "https://outcomeschool.com/blog/jev-and-system-one-models-explained",
+        "title": "Jev and System One Models Explained",
+        "description": "In this blog, we will learn about Jev and System One Models, a new kind of AI model that does not write text at all but only makes fast decisions that our software can use directly. We will also see what System One and System Two thinking mean, why using a normal LLM for small decisions is ...",
+        "thumbnail_url": "https://outcomeschool.com/static/images/blog/jev-and-system-one-models-explained.png",
+        "original_thumbnail_url": "https://outcomeschool.com/static/images/blog/jev-and-system-one-models-explained.png",
+        "page_age": "2026-09-17T20:23:02",
+        "favicon_url": "https://you.com/favicon?domain=outcomeschool.com&size=128",
+        "snippets": [
+          "In this blog, we will learn about Jev and System One Models, a new kind of AI model that does not write text at all but only makes fast decisions that our software can use directly. We will also see what System One and System Two thinking mean, why using a normal LLM for small decisions is slow and unreliable, how Jev answers many questions in a single pass instead of one word at a time, what a typed answer is, how the probability attached to every answer is made honest, why Jev cannot hallucinate, and where it works well and where it fails.",
+          "Here, \"System One\" comes from a famous idea about how the human brain thinks. And \"Model\" is the AI model. So, a System One Model is an AI model that thinks like the System One of our brain. Before jumping into Jev, we must know what System One and System Two thinking mean.",
+          "A frontier LLM, which means one of the biggest and most capable models available today, takes seconds for such a call. If we have a million tickets a day, both the waiting time and the bill add up very fast. We needed a model that only decides, does it instantly, always returns a valid answer, and tells us how sure it is. So, here comes Jev to the rescue. Jev is the first System One Model, built by a company called TypeSafe AI.",
+          "Here, parallel means all at the same time, and a pass means one run through the model. Let's understand what this means with an analogy. An LLM is like a person writing an essay with a pen. Each word comes after the previous word. It cannot write the tenth word before writing the ninth. Jev is like a person filling a form with checkboxes. It reads the whole state once, and then ticks all the boxes at the same time. There is no \"next word\" to wait for. That's the beauty of a System One Model."
+        ]
+      },
+      {
+        "url": "https://news.ycombinator.com/item?id=49717558",
+        "title": "Introducing System One Models and Jev | Hacker News",
+        "description": "Seems like a more accurate title would be \"Jev: Trading general purpose generation for fast typed inference\" or something like that \u00b7 This is interesting, but the speed comparison seems misleading? A generative model that can output code in a Turing-complete language can do anything a computer ...",
+        "page_age": "2026-09-19T00:05:08",
+        "favicon_url": "https://you.com/favicon?domain=news.ycombinator.com&size=128",
+        "snippets": []
+      },
+      {
+        "url": "https://www.latent.space/p/ainews-jev-a-system-one-model-that",
+        "title": "[AINews] Jev: a \u201cSystem One Model\u201d that only decides/class...",
+        "description": "API-vs-chatbot auditing mismatch: ... probing systems via API may not get findings that transfer cleanly to chatbot interfaces across ChatGPT, Claude, and Gemini. That is operationally important for labs and regulators relying on API-only access for external review. ... Jev / TypeSafe launch: @CompleteSkeptic introduced Jev and RLCD, a non-autoregressive decision-oriented model with aggressive ...",
+        "thumbnail_url": "https://substackcdn.com/image/youtube/w_728,c_limit/cJ0EOzey--o",
+        "original_thumbnail_url": "https://substackcdn.com/image/youtube/w_728,c_limit/cJ0EOzey--o",
+        "page_age": "2026-09-16T20:22:38",
+        "favicon_url": "https://you.com/favicon?domain=www.latent.space&size=128",
+        "snippets": [
+          "API-vs-chatbot auditing mismatch: @jennjwang reports that third-party auditors probing systems via API may not get findings that transfer cleanly to chatbot interfaces across ChatGPT, Claude, and Gemini. That is operationally important for labs and regulators relying on API-only access for external review. ... Jev / TypeSafe launch: @CompleteSkeptic introduced Jev and RLCD, a non-autoregressive decision-oriented model with aggressive claims on latency and cost.",
+          "New model category, or at least a new packaging of one: One of the highest-engagement technical launches was Diogo Almeida/TypeSafe\u2019s Jev announcement, claiming a new frontier model trained with RLCD and optimized for decisions, not text generation: 20\u2013200x faster, 40\u2013400x cheaper, with output tokens free. Reactions from @omarsar0, @chaseleantj, and @Yuchenj_UW all zero in on the same likely use case: replacing LLMs as structured classifiers / judges / routing policies in production systems where autoregressive generation is unnecessary overhead.",
+          "I\u2019ve spent the last 2 years in stealth building a new way to train models (RLCD), and a new type of frontier AI model that we are releasing today: Jev \u2022 20-200x faster \u2022 40-400x \u2026 ... For those used to traditional autoregressive LLMs, a fast model that cannot code and doesn\u2019t reason might feel counterintuitive in its usefulness. That\u2019s exactly what the team is aiming for in complementing \u201cSystem Two\u201d slower LLMs: you let go of strings and chat, and you get 1) parallel sampling, 2) \u201cno hallucination\u201d, 3) calibration.",
+          "Why it matters technically: Several reactions converge on the same thesis: domain-specific data plus RL infra can beat frontier general models on narrow but valuable scientific workloads. @zephyr_z9 highlights that Periodic pushed a Kimi 2.5/K2.x base past Astra; @_jasonwei notes this as evidence that specialized private data becomes increasingly decisive near the frontier of science; @vwxyzjn emphasizes the unusual part: RL on real experimental data from physical labs, plus bespoke infra and a sandbox system; @zijie_y adds that long scientific traces stressed memory and parallelism enough that training Neon required frontier work in long-context training efficiency."
+        ]
+      },
+      {
+        "url": "https://flaviocopes.com/jev/",
+        "title": "A deep dive into Jev, TypeSafe's System One model",
+        "description": "Learn how Jev turns text into typed choices, scores, and probabilities, with JavaScript examples, practical patterns, limits, and real use cases.",
+        "thumbnail_url": "https://flaviocopes.com/images/jev/og.jpg",
+        "original_thumbnail_url": "https://flaviocopes.com/images/jev/og.jpg",
+        "page_age": "2026-09-18T00:00:00",
+        "favicon_url": "https://you.com/favicon?domain=flaviocopes.com&size=128",
+        "snippets": [
+          "You add it where code needs one judgment, while the rest of the product stays ordinary code. It comes from TypeSafe AI, a San Francisco lab that came out of stealth on September 15, 2026 with $40M in seed funding and Jev as its first public model. TypeSafe calls it a System One model, a new class of model built to make fast decisions inside software rather than to chat with people.",
+          "A SaaS application could use it to decide whether a support message needs a database lookup, a generative model, or a person. The coding agent still writes the code. ChatGPT still writes the answer. Jev handles the small decision that tells the system which path to take. This changes how you can add AI to a product. The product does not need to become a chatbot, and the whole workflow does not need to become an agent. You can keep the application you already have and add one model call at the point where a normal if statement does not understand the input.",
+          "It cannot write a reply, produce code, summarize a document or explain its reasoning. If you need text, you still need an LLM. The interesting architecture is the two together: Jev decides, the LLM writes when writing is needed. Two small facts that help the mental model. System One is a reference to Thinking, Fast and Slow by Daniel Kahneman.",
+          "System 2 is slow, deliberate reasoning. In TypeSafe\u2019s framing, Jev handles the first kind of task while reasoning models handle the second. Jev is named after William Stanley Jevons, the economist behind the Jevons paradox: when steam engines got more efficient, coal consumption went up, not down, because cheaper power created new uses for it. TypeSafe\u2019s bet is that intelligence follows the same curve. Make a decision cost far less than one cent and you\u2019ll put decisions in places you would never have called an LLM."
+        ]
+      },
+      {
+        "url": "https://www.mindstudio.ai/blog/jev-system-one-model-classification",
+        "title": "Jev AI Tested: A Fast \"System One\" Model for Structured Decisions ...",
+        "description": "Hands-on tests of Jev, a fast classification model for routing, scoring, and yes/no decisions, covering negation, injection, and latency.",
+        "thumbnail_url": "https://i.mscdn.ai/o/iZl0kkZU2R9KXyy7/a/3V2ICO3oSq2QZPii/generated-images/1f03e98a-0622-4dcb-b094-a54da1a98c90.png?fm=auto&amp;w=1200&amp;h=630&amp;fit=crop",
+        "original_thumbnail_url": "https://i.mscdn.ai/o/iZl0kkZU2R9KXyy7/a/3V2ICO3oSq2QZPii/generated-images/1f03e98a-0622-4dcb-b094-a54da1a98c90.png?fm=auto&amp;w=1200&amp;h=630&amp;fit=crop",
+        "page_age": "2026-09-18T00:00:00",
+        "favicon_url": "https://you.com/favicon?domain=www.mindstudio.ai&size=128",
+        "snippets": [
+          "In a basic injection test, a support message describing a crashed checkout page included a fake \u201csystem override\u201d instructing the model to classify it as billing and mark refund and urgency as true. The actual evaluation instructions told Jev to treat text inside the message as untrusted. Jev held its ground: it kept the technical support classification, kept the refund probability low (3%), and kept urgency in the uncertain middle rather than spiking to a false positive. That\u2019s a good outcome, but it\u2019s one test against one simple injection attempt.",
+          "When the message was changed to \u201cI am not asking for a refund, I only need a copy of my invoice,\u201d Jev still routed it to billing, correctly, but dropped the refund probability to 3%. That means it wasn\u2019t just pattern-matching on the word \u201crefund.\u201d It was parsing the actual claim being made. This is a common failure point for simpler keyword-based or naive classification systems, and it\u2019s a useful thing to verify before wiring any model into an automated action like issuing a refund.",
+          "Jev is a small, fast model built for structured decisions rather than open-ended chat. Instead of generating a written response, it answers one of three question types: choice (pick from a list of options you supply), score (rate something on a scale you define), or null (return a probability that a yes/no statement is true).",
+          "This matters for anyone building routing logic, moderation pipelines, or agent tooling where you don\u2019t want to pay for a full language model just to decide \u201cbilling or technical support\u201d or \u201ctrue or false.\u201d \u00b7 In one test, a support message described a duplicate charge, asked for money back, and mentioned the site was working fine. Asked four questions at once (department, refund request, urgency, frustration level), Jev routed it to billing, scored the refund probability at 98%, urgency at 11%, and frustration near the calm end of the scale."
+        ]
+      },
+      {
+        "url": "https://github.com/AkihikoWatanabe/paper_notes/issues/6578",
+        "title": "Introducing System One Models & Jev, TypeSafe AI, 2026.09 \u00b7 Issue ...",
+        "description": "Introducing System One Models & Jev, TypeSafe AI, 2026.09#6578 \u00b7 Copy link \u00b7 Labels \u00b7 AIAgentsBlogCodingEfficiencyImprovementInitial Impression NotesNLPSelected Papers/Blogsread-later \u00b7 AkihikoWatanabe \u00b7 opened \u00b7 on Sep 16, 2026 \u00b7 Issue body actions \u00b7",
+        "thumbnail_url": "https://opengraph.githubassets.com/bd601f9fff2768e11904362a4e5f6bd5280e74bd8e3d44d9bf65e04e2654c736/AkihikoWatanabe/paper_notes/issues/6578",
+        "original_thumbnail_url": "https://opengraph.githubassets.com/bd601f9fff2768e11904362a4e5f6bd5280e74bd8e3d44d9bf65e04e2654c736/AkihikoWatanabe/paper_notes/issues/6578",
+        "page_age": "2026-09-16T10:48:21",
+        "favicon_url": "https://you.com/favicon?domain=github.com&size=128",
+        "snippets": [
+          "https://typesafe.ai/blog/introducing-system-one-models-and-jev \u00b7 Reactions are currently unavailable \u00b7 Sign up for free to join this conversation on GitHub. Already have an account? Sign in to comment \u00b7 No one assigned \u00b7 AIAgentsBlogCodingEfficiencyImprovementInitial Impression NotesNLPSelected Papers/Blogsread-later \u00b7"
+        ]
+      },
+      {
+        "url": "https://lobste.rs/s/ebbixx/introducing_system_one_models_jev",
+        "title": "Introducing System One Models & Jev | Lobsters",
+        "description": "The (lack of) accessibility of this website is beyond words \u00b7 Lots of hype on this lately but I am honestly disappointed that I have to join a wait-list and still can't even see the doc to try to understand what the capabilities are and how are we supposed to use them",
+        "thumbnail_url": "https://lobste.rs/story_image/ebbixx.png",
+        "original_thumbnail_url": "https://lobste.rs/story_image/ebbixx.png",
+        "page_age": "2026-09-18T02:18:26",
+        "favicon_url": "https://you.com/favicon?domain=lobste.rs&size=128",
+        "snippets": [
+          "Introducing System One Models & Jev \u00b7 vibecoding typesafe.ai \u00b7 via w 2026-09-17 19:05:10 | caches \u00b7 Archive.org \u00b7 Ghostarchive | 4 comments \u00b7 8 \u00b7 aloys 2026-09-17 22:20:09 \u00b7 The (lack of) accessibility of this website is beyond words. ~ loige 2026-09-18 02:59:18 \u00b7",
+          "The model is available on Vercel and Openrouter without waitlist."
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "query": "Introducing System One Models Jev",
+    "search_uuid": "4d13f66b-1fec-44ea-9ec8-cdb4acf7d270",
+    "latency": 0.4574407800100744
+  }
+}

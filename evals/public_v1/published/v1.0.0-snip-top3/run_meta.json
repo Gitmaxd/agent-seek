@@ -1,0 +1,33 @@
+{
+  "kind": "top3_gold",
+  "suite_id": "agent-seek-public-v1",
+  "arm": "agent_seek",
+  "mode": "snip",
+  "k": 3,
+  "source": "openai",
+  "live": true,
+  "gold": "evals/public_v1/gold_v1/gold_key.jsonl",
+  "published": "evals/public_v1/published/v1.0.0-snip",
+  "enrich": "evals/public_v1/enriched/v1.0.0-snip-shortlists.jsonl",
+  "page_text": "fetched outside repo (147/148 pages; not shipped)",
+  "rediscover": false,
+  "youcom": false,
+  "temperature": null,
+  "finished_at": "2026-09-21T23:13:36Z",
+  "judge": {
+    "model": "gpt-5.6-sol",
+    "api": "responses",
+    "reasoning_effort": "medium",
+    "reasoning_mode": "standard",
+    "temperature": null,
+    "prompt": "evals/public_v1/top3/PROMPT_v1.md",
+    "prompt_sha256": "405f97b60245e49f84c8c2ab5532437ed24cff8f0880cc8b06750759e3cf1ae1",
+    "schema": "evals/public_v1/top3/schema.json"
+  },
+  "run_id": "v1.0.0-snip-top3",
+  "evidence_pages": {
+    "page_text": 147,
+    "title_snippet": 1,
+    "url_only": 0
+  }
+}

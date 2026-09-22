@@ -1,0 +1,28 @@
+{
+  "method": "http_html_title_meta",
+  "rediscover": false,
+  "youcom": false,
+  "description": "GET each frozen shortlist URL and read the HTML title and meta description. No You.com rediscovery. Blank title and snippet mean the fetch failed or the page had neither tag.",
+  "user_agent": "AgentSeekEval/1.0 (+https://agentseek.dev; frozen-shortlist title enrichment)",
+  "concurrency": 8,
+  "per_host_interval_s": 0.35,
+  "timeout_s": 6.0,
+  "max_bytes": 48000,
+  "generated_at": "2026-09-21T22:14:01Z",
+  "label": "v1.0.0-snip",
+  "source_dir": "evals/public_v1/published/v1.0.0-snip",
+  "mode": "snip",
+  "queries": 50,
+  "distinct_urls_in_run": 764,
+  "fetch_counts": {
+    "ok": 625,
+    "empty": 23,
+    "non_html": 7,
+    "http_error": 110,
+    "failed": 5
+  },
+  "with_title": 712,
+  "with_snippet": 548,
+  "candidate_rows": 770,
+  "artifact": "evals/public_v1/enriched/v1.0.0-snip-shortlists.jsonl"
+}

@@ -1,0 +1,82 @@
+<h1>Agent Seek pricing</h1>
+    <p>
+      Agent Seek is a <strong>free prototype</strong>. There is no paid plan, no usage invoice from
+      this host, no credit-card checkout, and no contact-sales form. If you self-host, you still pay
+      whatever You.com and TypeSafe bill for the upstream calls this service makes on your behalf.
+    </p>
+    <h2>Plan tiers</h2>
+    <table>
+      <thead>
+        <tr><th>Plan</th><th>Price</th><th>Who it is for</th><th>How to start</th><th>Rate limit</th><th>Discover cap</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Sandbox</strong></td><td><strong>$0</strong></td>
+          <td>Agents inspecting the contract</td>
+          <td><code>GET /health</code>, <code>GET /v1</code>, <code>GET /v1/sandbox</code> (zero auth)</td>
+          <td>not throttled</td><td>n/a (canned body)</td>
+        </tr>
+        <tr>
+          <td><strong>Prototype</strong></td><td><strong>$0</strong></td>
+          <td>Live demo on this host</td>
+          <td>Public <code>AS_…</code> Bearer (same as <code>/config.js</code>) or optional OAuth DCR</td>
+          <td>When <code>AGENT_SEEK_DEMO_MODE=enabled</code>: 5 searches / IP lifetime shared by REST <code>/v1/search</code>, <code>/api/v1/search</code>, and MCP <code>search_web</code> (no reset); optional 60 req / min burst</td><td>100 candidates / query</td>
+        </tr>
+        <tr>
+          <td><strong>Self-host</strong></td><td><strong>$0</strong> from us</td>
+          <td>You run the repo</td>
+          <td>Set <code>AGENT_SEEK_API_KEY</code> in <code>.env</code></td>
+          <td>Off unless you set Upstash</td><td>100 (code hard cap)</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      There is no Team, Business, or Enterprise SKU. If a future paid tier appears it will be listed
+      here with a USD price, a feature matrix, and a Sunset note, not a “contact us” cell.
+    </p>
+    <h2>Feature breakdown</h2>
+    <table>
+      <thead>
+        <tr><th>Feature</th><th>Sandbox</th><th>Prototype</th><th>Self-host</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Google-simple search UI</td><td>yes (this host)</td><td>yes</td><td>yes</td></tr>
+        <tr><td><code>POST /v1/search</code> / <code>GET /v1/search</code></td><td>example only</td><td>yes</td><td>yes</td></tr>
+        <tr><td><code>mode=snip</code> (API/MCP default)</td><td>example</td><td>yes</td><td>yes</td></tr>
+        <tr><td><code>mode=deep</code> (opt-in)</td><td>example</td><td>yes</td><td>yes</td></tr>
+        <tr><td>MCP Streamable HTTP (<code>/mcp</code>)</td><td>tools/list yes</td><td>yes</td><td>yes</td></tr>
+        <tr><td>OAuth 2.0 + PKCE S256</td><td>yes (anonymous / DCR)</td><td>yes</td><td>yes</td></tr>
+        <tr><td>Shared API key</td><td>local <code>.env</code> only</td><td>public demo <code>AS_…</code> Bearer (not a secret)</td><td>you set it</td></tr>
+        <tr><td>OpenAPI 3.1 / Swagger / ReDoc</td><td>yes</td><td>yes</td><td>yes</td></tr>
+        <tr><td>SLA / uptime contract</td><td>no</td><td>no</td><td>no</td></tr>
+        <tr><td>Markup on You.com / Jev</td><td>none</td><td>none</td><td>none (you pay providers)</td></tr>
+      </tbody>
+    </table>
+    <h2>Usage limits</h2>
+    <ul>
+      <li><strong>k:</strong> 1–25 (default 10)</li>
+      <li><strong>max_candidates:</strong> 1–100 (default 50). The service never requests more than 100 discover hits.</li>
+      <li><strong>Website demo quota:</strong> off unless <code>AGENT_SEEK_DEMO_MODE=enabled</code> (code default is <code>disabled</code>; the live host sets <code>enabled</code> at deploy). Then each client IP gets 5 searches total, shared by REST <code>/v1/search</code>, <code>/api/v1/search</code>, and MCP <code>search_web</code> (the HTML UI uses that same allowance). Counted in Upstash with no TTL and no time reset. After the allowance is used, <code>429</code> <code>application/problem+json</code> with <code>code=DEMO_EXHAUSTED</code> (no <code>Retry-After</code>). Also off when <code>AGENT_SEEK_DEMO_SEARCH_LIMIT=0</code> or Upstash is unset. Unauthenticated MCP helper tools do not consume this quota.</li>
+      <li><strong>Burst rate limit:</strong> optional Upstash Redis REST sliding window, per client IP (default 60/min). Off when <code>UPSTASH_REDIS_REST_URL</code> or <code>UPSTASH_REDIS_REST_TOKEN</code> is empty. Search and MCP <code>search_web</code> only. Health, sandbox, docs, and well-known discovery are not throttled. Responses include RFC <code>RateLimit</code> and <code>RateLimit-Policy</code>. Burst <code>429</code> includes <code>Retry-After</code> and <code>application/problem+json</code> with <code>code=RATE_LIMITED</code>. Redis errors while enabled fail closed (<code>503</code>).</li>
+      <li><strong>Call timeouts:</strong> You.com ≤ 8s, Jev ≤ 8s, deep page fetch ≤ 5s per call. There is no whole-request timeout.</li>
+    </ul>
+    <p>
+      Default discover cost is on the order of You.com ~$0.005 per query plus Jev cascade spend on
+      the admitted set. Agent Seek does not add a markup or invoice that spend.
+    </p>
+    <h2>How to get access</h2>
+    <p>No sales form. Copy the public demo Bearer for live search; do not wait on email.</p>
+    <ol>
+      <li><strong>Zero-auth:</strong> call <a href="/v1/sandbox"><code>GET /v1/sandbox</code></a> and <a href="/openapi.json"><code>GET /openapi.json</code></a>.</li>
+      <li><strong>Live demo Bearer:</strong> <code>Authorization: Bearer AS_LXxYWY1wQcEwliYnkfAXRA-c0sPlsRtVz4j_ZvJRlnI</code> (public; same as <code>/config.js</code>). Burns operator quota + per-IP demo limit. Walkthrough: <a href="/auth.md">auth.md</a>.</li>
+      <li><strong>Local key:</strong> <code>cp .env.example .env</code>, set <code>AGENT_SEEK_API_KEY</code> (and your own YDC / TypeSafe keys), run <code>uvicorn apps.api.main:app --port 8787</code>.</li>
+      <li><strong>Optional / advanced — OAuth:</strong> <code>POST /oauth2/register</code> or <code>POST /agent/identity</code> with <code>{"type":"anonymous"}</code>. You do not need OAuth to try the live demo.</li>
+    </ol>
+    <h2>What is not included</h2>
+    <ul>
+      <li>Generated answers / chat</li>
+      <li>Unbounded crawl</li>
+      <li>SLA, refunds, or uptime credits (there is nothing to refund)</li>
+      <li>Metered billing or overage fees (there is no bill)</li>
+    </ul>
+    <p>See <a href="/developers">API</a>, <a href="/auth.md">auth.md</a>, and <a href="/docs/versioning.md">versioning</a>.</p>

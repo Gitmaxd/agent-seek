@@ -1,0 +1,52 @@
+{
+  "results": {
+    "web": [
+      {
+        "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+        "title": "Introducing System One Models and Jev",
+        "description": "TypeSafe launches System One models and Jev, a calibrated decision model for software.",
+        "snippets": [
+          "Jev returns typed Choice, Score, and Noul judgments.",
+          "System One models make fast structured decisions."
+        ],
+        "favicon_url": "https://you.com/favicon?domain=typesafe.ai&size=128"
+      },
+      {
+        "url": "https://docs.typesafe.ai/concepts/system-one",
+        "title": "System One — TypeSafe Docs",
+        "description": "System One models evaluate state and return typed answers and probabilities.",
+        "favicon_url": "https://you.com/favicon?domain=docs.typesafe.ai&size=128"
+      },
+      {
+        "url": "https://example.com/seo-spam-buy-cheap-widgets?utm_source=spam",
+        "title": "Buy Cheap Widgets NOW!!!",
+        "description": "Click here for amazing deals on widgets and more spam content farm article.",
+        "snippets": ["Buy now", "Limited offer"]
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Jevons_paradox",
+        "title": "Jevons paradox - Wikipedia",
+        "description": "The Jevons paradox occurs when technological progress increases efficiency but overall consumption rises.",
+        "snippets": ["William Stanley Jevons"]
+      },
+      {
+        "url": "https://docs.typesafe.ai/api",
+        "title": "API reference — TypeSafe",
+        "description": "POST /v1/systemone evaluates state against typed questions.",
+        "snippets": ["Authorization: Bearer"]
+      },
+      {
+        "url": "https://news.ycombinator.com/item?id=1",
+        "title": "Show HN: random unrelated post",
+        "description": "A discussion about gardening tips for tomatoes.",
+        "snippets": ["tomatoes"]
+      }
+    ],
+    "news": []
+  },
+  "metadata": {
+    "search_uuid": "fixture-uuid-redacted",
+    "query": "Introducing System One Models Jev",
+    "latency": 0.42
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "skill_name": "agent-seek",
+  "version": "0.1.39",
+  "api_key_env": "AGENT_SEEK_API_KEY",
+  "auth_header": "Authorization: Bearer",
+  "endpoints": {
+    "search": "POST /v1/search",
+    "health": "GET /health",
+    "openapi_docs": "/api/docs",
+    "product_docs": "/docs",
+    "mcp": "POST /mcp",
+    "auth_md": "/auth.md"
+  },
+  "request_fields": [
+    "q",
+    "k",
+    "max_candidates",
+    "mode",
+    "nocache"
+  ],
+  "response_result_fields": [
+    "rank",
+    "url",
+    "title",
+    "snippet",
+    "score",
+    "flags",
+    "raw_rank",
+    "provider",
+    "signals",
+    "gates_relaxed"
+  ],
+  "signal_keys": [
+    "answerability",
+    "authority",
+    "on_topic",
+    "states_sought_fact",
+    "subject_match",
+    "spam",
+    "prompt_injection"
+  ],
+  "meta_version_field": "agent_seek_version",
+  "modes": [
+    "deep",
+    "snip"
+  ],
+  "default_mode": "snip",
+  "default_k": 10,
+  "default_max_candidates": 50,
+  "hard_cap": 100,
+  "deep_fetch_cap": 12,
+  "hard_gates": [
+    "subject_match",
+    "is_republisher",
+    "prompt_injection"
+  ],
+  "hard_gate_threshold": 0.55,
+  "hard_gate_missing_parse": {
+    "subject_match": "fail-open",
+    "is_republisher": "fail-open",
+    "prompt_injection": "fail-flagged"
+  },
+  "ui_signal_labels": {
+    "prompt_injection": "Injection risk"
+  }
+}

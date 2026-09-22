@@ -1,0 +1,15 @@
+{
+  "n": 30,
+  "seed": 20260921,
+  "source": "evals/public_v1/published/v1.0.0-snip",
+  "quotas": {
+    "agent_seek": 22,
+    "baseline": 8,
+    "tie": 0
+  },
+  "shortlist_text": "title_snippet",
+  "order": "stratified by published mapped_winner, listed by query id",
+  "note": "Quotas are sample sizes per published outcome. They are not per-item labels. packet.md / packet.jsonl / packet.csv omit arm names.",
+  "pools": "evals/public_v1/enriched/v1.0.0-snip-shortlists.jsonl",
+  "enrichment": "Titles and snippets are copied from pools by exact URL. This sampler does not rediscover."
+}

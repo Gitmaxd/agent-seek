@@ -1,0 +1,55 @@
+{
+  "query": "Who is gitmaxd",
+  "candidates": [
+    {
+      "id": "gh_user",
+      "url": "https://github.com/gitmaxd",
+      "title": "gitmaxd · GitHub",
+      "snippet": "GitHub profile for gitmaxd.",
+      "raw_rank": 1,
+      "subject_match": 0.95,
+      "is_republisher": 0.08,
+      "expect_in_results": true
+    },
+    {
+      "id": "x_canon",
+      "url": "https://x.com/GitMaxd",
+      "title": "GitMaxd (@GitMaxd) / X",
+      "snippet": "Official X profile for GitMaxd.",
+      "raw_rank": 2,
+      "subject_match": 0.93,
+      "is_republisher": 0.12,
+      "expect_in_results": true
+    },
+    {
+      "id": "viewer_mirror",
+      "url": "https://example-x-viewer.test/user/GitMaxd",
+      "title": "View tweets from @GitMaxd — unofficial profile viewer",
+      "snippet": "See tweets and media from any X account without logging in. Third-party Twitter profile viewer.",
+      "raw_rank": 3,
+      "subject_match": 0.90,
+      "is_republisher": 0.92,
+      "expect_in_results": false
+    },
+    {
+      "id": "seo_copy",
+      "url": "https://social-mirror.example/github/gitmaxd",
+      "title": "gitmaxd GitHub profile — mirrored copy",
+      "snippet": "Scraped mirror of github.com/gitmaxd repositories and bio for SEO.",
+      "raw_rank": 4,
+      "subject_match": 0.88,
+      "is_republisher": 0.85,
+      "expect_in_results": false
+    },
+    {
+      "id": "parse_miss",
+      "url": "https://news.example/article-about-gitmaxd",
+      "title": "Interview with gitmaxd",
+      "snippet": "Original reporting on the developer gitmaxd.",
+      "raw_rank": 5,
+      "subject_match": 0.80,
+      "is_republisher": null,
+      "expect_in_results": true
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 ---
 name: agent-seek
-version: "0.1.39"
+version: "0.3.0"
 compatibility: MCP Streamable HTTP; REST POST /v1/search
 metadata:
   origin: https://agentseek.dev

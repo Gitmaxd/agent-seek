@@ -64,8 +64,8 @@ def _fake_search(q: str = "jev") -> SearchResponse:
 
 
 def test_version_is_0127():
-    assert AGENT_SEEK_VERSION == "0.1.39"
-    assert client.get("/health").json() == {"ok": True, "version": "0.1.39"}
+    assert AGENT_SEEK_VERSION == "0.3.0"
+    assert client.get("/health").json() == {"ok": True, "version": "0.3.0"}
 
 
 def test_oauth_as_metadata_shape():
@@ -147,7 +147,7 @@ def test_mcp_server_card():
     card = r.json()
     assert card["name"]
     assert len(card["description"]) >= 20
-    assert card["version"] == "0.1.39"
+    assert card["version"] == "0.3.0"
     assert card["serverUrl"].endswith("/mcp")
     names = {t["name"] if isinstance(t, dict) else t for t in card["tools"]}
     assert "search_web" in names
@@ -175,7 +175,7 @@ def test_mcp_initialize_and_tools_list():
     result = body["result"]
     assert result["protocolVersion"].startswith("2025-")
     assert result["serverInfo"]["name"] == "agent-seek"
-    assert result["serverInfo"]["version"] == "0.1.39"
+    assert result["serverInfo"]["version"] == "0.3.0"
     assert "instructions" in result and len(result["instructions"]) >= 20
     assert "tools" in result["capabilities"]
     assert "resources" not in result["capabilities"]
@@ -319,7 +319,7 @@ def test_oauth_service_auth_then_search():
             headers={"Authorization": f"Bearer {access}"},
         )
     assert r.status_code == 200
-    assert r.json()["meta"]["agent_seek_version"] == "0.1.39"
+    assert r.json()["meta"]["agent_seek_version"] == "0.3.0"
 
 
 def test_anonymous_identity_lacks_search_scope():

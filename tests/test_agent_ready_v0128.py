@@ -26,8 +26,8 @@ client = TestClient(app)
 
 
 def test_version_is_0128():
-    assert AGENT_SEEK_VERSION == "0.1.39"
-    assert client.get("/health").json() == {"ok": True, "version": "0.1.39"}
+    assert AGENT_SEEK_VERSION == "0.3.0"
+    assert client.get("/health").json() == {"ok": True, "version": "0.3.0"}
 
 
 def _assert_problem(r, status: int, code: str):
@@ -84,7 +84,7 @@ def test_public_api_discovery_routes():
         assert "application/json" in r.headers["content-type"]
         data = r.json()
         assert data["name"] == "Agent Seek API"
-        assert data["version"] == "0.1.39"
+        assert data["version"] == "0.3.0"
         assert data["search"].endswith("/v1/search")
         assert data["sandbox"].endswith("/v1/sandbox")
         assert data["versioning"].endswith("/docs/versioning.md")
@@ -98,7 +98,7 @@ def test_sandbox_zero_auth():
     body = r.json()
     assert body["results"][0]["provider"] == "sandbox"
     assert body["meta"]["ranking"] == "sandbox"
-    assert body["meta"]["agent_seek_version"] == "0.1.39"
+    assert body["meta"]["agent_seek_version"] == "0.3.0"
 
 
 def test_v2_and_api_unknown_are_problem_json():
@@ -141,7 +141,7 @@ def test_markdown_twins_api_docs_and_versioning():
 
 def test_openapi_operation_ids_typed_and_problem():
     spec = client.get("/openapi.json").json()
-    assert spec["info"]["version"] == "0.1.39"
+    assert spec["info"]["version"] == "0.3.0"
     assert spec["info"]["x-api-versioning"]["current"] == "v1"
     assert "Sunset" in spec["info"]["description"] or "sunset" in spec["info"]["description"].lower()
     ids = []
@@ -189,7 +189,7 @@ def test_agent_card_and_mode_agent():
     assert card.status_code == 200
     data = card.json()
     assert data["name"] == "Agent Seek"
-    assert data["version"] == "0.1.39"
+    assert data["version"] == "0.3.0"
     assert data["skills"]
     assert data["skills"][0]["tags"]
     assert data["supportedInterfaces"][0]["url"].endswith("/mcp")

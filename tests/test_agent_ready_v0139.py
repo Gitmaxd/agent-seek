@@ -1,4 +1,4 @@
-"""v0.1.39 — crawlable homepage prose + typed OpenAPI schemas + sandbox discoverability."""
+"""v0.3.0 — crawlable homepage prose + typed OpenAPI schemas + sandbox discoverability."""
 from __future__ import annotations
 
 import os
@@ -76,8 +76,8 @@ def _is_typed_object(schema: dict, components: dict) -> bool:
 
 
 def test_version_is_0139():
-    assert AGENT_SEEK_VERSION == "0.1.39"
-    assert client.get("/health").json() == {"ok": True, "version": "0.1.39"}
+    assert AGENT_SEEK_VERSION == "0.3.0"
+    assert client.get("/health").json() == {"ok": True, "version": "0.3.0"}
 
 
 def test_homepage_raw_html_has_500_chars_h1_and_h2s():
@@ -156,13 +156,13 @@ def test_sandbox_zero_auth_still_works():
     body = r.json()
     assert body["results"][0]["provider"] == "sandbox"
     assert body["meta"]["ranking"] == "sandbox"
-    assert body["meta"]["agent_seek_version"] == "0.1.39"
+    assert body["meta"]["agent_seek_version"] == "0.3.0"
 
 
 def test_openapi_all_major_ops_have_typed_schemas():
     spec = client.get("/openapi.json").json()
     assert spec["info"]["title"] == "Agent Seek OpenAPI"
-    assert spec["info"]["version"] == "0.1.39"
+    assert spec["info"]["version"] == "0.3.0"
     components = spec["components"]
     schemas = components["schemas"]
     for name in (
@@ -209,4 +209,4 @@ def test_openapi_all_major_ops_have_typed_schemas():
 def test_mcp_card_branded():
     card = client.get("/.well-known/mcp/server-card.json").json()
     assert card["name"] == "Agent Seek MCP"
-    assert card["version"] == "0.1.39"
+    assert card["version"] == "0.3.0"

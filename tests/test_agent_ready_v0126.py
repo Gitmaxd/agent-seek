@@ -38,10 +38,10 @@ def _visible_text(html: str) -> str:
 
 
 def test_version_is_0126():
-    assert AGENT_SEEK_VERSION == "0.1.39"
+    assert AGENT_SEEK_VERSION == "0.3.0"
     r = client.get("/health")
     assert r.status_code == 200
-    assert r.json() == {"ok": True, "version": "0.1.39"}
+    assert r.json() == {"ok": True, "version": "0.3.0"}
 
 
 def test_llms_txt():
@@ -376,7 +376,7 @@ def test_openapi_operation_ids_and_errors():
     assert r.status_code == 200
     spec = r.json()
     assert spec["openapi"].startswith("3.")
-    assert spec["info"]["version"] == "0.1.39"
+    assert spec["info"]["version"] == "0.3.0"
     post = spec["paths"]["/v1/search"]["post"]
     assert post["operationId"] == "searchPost"
     assert post.get("description") or post.get("summary")

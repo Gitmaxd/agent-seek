@@ -30,7 +30,7 @@ client = TestClient(app)
 def test_health():
     r = client.get("/health")
     assert r.status_code == 200
-    assert r.json() == {"ok": True, "version": "0.1.39"}
+    assert r.json() == {"ok": True, "version": "0.3.0"}
 
 
 def test_search_unauthorized():
@@ -59,7 +59,7 @@ def test_deep_mode_accepted():
             latency_ms=12,
             mode="deep",
             ranking="jev",
-            agent_seek_version="0.1.39",
+            agent_seek_version="0.3.0",
             fetch_ms=5,
         ),
         raw_results=[],
@@ -77,7 +77,7 @@ def test_deep_mode_accepted():
     assert r.status_code == 200
     body = r.json()
     assert body["meta"]["mode"] == "deep"
-    assert body["meta"]["agent_seek_version"] == "0.1.39"
+    assert body["meta"]["agent_seek_version"] == "0.3.0"
     assert pipe.search.await_args.kwargs.get("mode") == "deep"
 
 
@@ -102,7 +102,7 @@ def test_omitted_mode_is_snip():
             latency_ms=10,
             mode="snip",
             ranking="jev",
-            agent_seek_version="0.1.39",
+            agent_seek_version="0.3.0",
         ),
         raw_results=[],
     )
@@ -188,7 +188,7 @@ def test_search_mocked():
     assert r.status_code == 200
     body = r.json()
     assert body["results"][0]["score"] == 0.9
-    assert body["meta"]["agent_seek_version"] == "0.1.39"
+    assert body["meta"]["agent_seek_version"] == "0.3.0"
 
 
 def _openapi_problem_example(media: dict) -> dict:

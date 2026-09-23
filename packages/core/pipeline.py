@@ -14,7 +14,7 @@ from packages.core.rank.jev import JevClient, JevError
 from packages.core.url_normalize import clamp_max_candidates
 
 logger = logging.getLogger("agent_seek.pipeline")
-AGENT_SEEK_VERSION = "0.1.39"
+AGENT_SEEK_VERSION = "0.3.0"
 
 
 class AgentSeekPipeline:

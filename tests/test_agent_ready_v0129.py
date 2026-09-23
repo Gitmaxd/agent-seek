@@ -1,4 +1,4 @@
-"""v0.1.39 — public origin + agent onboarding path (callout under search, skill install, llms.txt)."""
+"""v0.3.0 — public origin + agent onboarding path (callout under search, skill install, llms.txt)."""
 from __future__ import annotations
 
 import os
@@ -30,8 +30,8 @@ WELL_KNOWN_SKILL = "/.well-known/agent-skills/agent-seek/SKILL.md"
 
 
 def test_version_is_0129():
-    assert AGENT_SEEK_VERSION == "0.1.39"
-    assert client.get("/health").json() == {"ok": True, "version": "0.1.39"}
+    assert AGENT_SEEK_VERSION == "0.3.0"
+    assert client.get("/health").json() == {"ok": True, "version": "0.3.0"}
 
 
 def test_homepage_html_has_agent_callout_and_links():
@@ -146,7 +146,7 @@ def test_mode_agent_includes_onboarding():
     r = client.get("/?mode=agent")
     assert r.status_code == 200
     body = r.json()
-    assert body["version"] == "0.1.39"
+    assert body["version"] == "0.3.0"
     assert "skill" in body["endpoints"]
     assert body["endpoints"]["skill"].endswith(WELL_KNOWN_SKILL)
     assert "llms.txt" in body["onboarding"]

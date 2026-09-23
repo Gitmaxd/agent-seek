@@ -47,7 +47,7 @@ class SearchMeta(BaseModel):
     latency_ms: int = Field(..., description="End-to-end latency in milliseconds", ge=0)
     mode: str = Field(default="snip", description="snip (default) or deep")
     provider: str = Field(default="you.com", description="Discover provider id")
-    agent_seek_version: str = Field(default="0.1.39", description="Prototype build version")
+    agent_seek_version: str = Field(default="0.3.0", description="Prototype build version")
     ranking: str = Field(
         default="jev",
         description="Ranking path: jev | raw | raw_fallback | sandbox",

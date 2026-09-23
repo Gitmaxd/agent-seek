@@ -1,6 +1,6 @@
 {
   "skill_name": "agent-seek",
-  "version": "0.1.39",
+  "version": "0.3.0",
   "api_key_env": "AGENT_SEEK_API_KEY",
   "auth_header": "Authorization: Bearer",
   "endpoints": {

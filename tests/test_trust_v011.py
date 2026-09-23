@@ -161,7 +161,7 @@ def test_api_nocache_and_cache_scope():
             kept=1,
             latency_ms=10,
             ranking="jev",
-            agent_seek_version="0.1.39",
+            agent_seek_version="0.3.0",
             cache_hit=False,
             cache_scope="discover",
         ),
@@ -180,7 +180,7 @@ def test_api_nocache_and_cache_scope():
     assert r.status_code == 200
     body = r.json()
     assert body["meta"]["cache_scope"] == "discover"
-    assert body["meta"]["agent_seek_version"] == "0.1.39"
+    assert body["meta"]["agent_seek_version"] == "0.3.0"
     pipe.search.assert_awaited()
     kwargs = pipe.search.await_args.kwargs
     assert kwargs.get("nocache") is True
@@ -202,4 +202,4 @@ def test_api_nocache_and_cache_scope():
 def test_health_version_012():
     r = client.get("/health")
     assert r.status_code == 200
-    assert r.json() == {"ok": True, "version": "0.1.39"}
+    assert r.json() == {"ok": True, "version": "0.3.0"}

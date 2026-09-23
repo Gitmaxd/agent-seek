@@ -4,7 +4,7 @@ In-repo companion to [`SKILL.md`](SKILL.md). Read this when you need the full RE
 
 Web results are scored for prompt injection before the agent reads them (`signals.prompt_injection`; UI: **Injection risk**). Parsed ≥ 0.55 or missing/unparseable parse is gated from `results` (fail-flagged); gated rows may still appear in `raw_results`.
 
-**Live origin:** `https://agentseek.dev` · **Local:** `http://127.0.0.1:8787` · **Version:** `0.1.39` (`meta.agent_seek_version`, `GET /health`)
+**Live origin:** `https://agentseek.dev` · **Local:** `http://127.0.0.1:8787` · **Version:** `0.3.0` (`meta.agent_seek_version`, `GET /health`)
 
 ## REST `POST /v1/search`
 
@@ -72,7 +72,7 @@ Also: `GET /v1/search?q=…&mode=snip` with the same query fields.
     "latency_ms": 842,
     "mode": "snip",
     "provider": "you.com",
-    "agent_seek_version": "0.1.39",
+    "agent_seek_version": "0.3.0",
     "ranking": "jev",
     "fetch_ms": null,
     "cache_hit": false,
@@ -186,6 +186,6 @@ Zero-auth sandbox:
 curl -sS "https://agentseek.dev/v1/sandbox"
 ```
 
-`GET /health` → `{"ok":true,"version":"0.1.39"}`.
+`GET /health` → `{"ok":true,"version":"0.3.0"}`.
 
 Human product page: `/docs`. OpenAPI Swagger: `/api/docs`. Schema: `/openapi.json`. Auth walkthrough: `/auth.md`. Public agent start: `/llms.txt`.
